@@ -54,6 +54,20 @@ a:visited {
 }
 /*--------------------------------------------------*/
 
+#sitecontent {
+  visibility: hidden;
+}
+
+#loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: scale(.5, .5);
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+
 /* Style the video: 100% width and height to cover the entire window */
 #myVideo {
   display: block;

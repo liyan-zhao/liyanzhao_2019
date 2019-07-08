@@ -16,7 +16,11 @@
 	<script type="text/javascript" src="js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
 </head>
 
+<img id=loader src="images/loader2-100.gif">
+
 <body>
+
+<div id="sitecontent">
 
 <div class="sitename">Liyan Zhao</div>
 
@@ -482,6 +486,14 @@
 		</div>
 	</div>
 </section>
+</div>
+
+<script type="text/javascript">
+	$(window).on('load', function(){
+		$('#sitecontent').css('visibility', 'visible');
+		$('#loader').css('visibility', 'hidden');
+	});
+</script>
 
 	<script>
 		// init controller
