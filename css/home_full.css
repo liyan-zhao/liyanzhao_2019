@@ -137,8 +137,9 @@ a:visited {
   width: 173px;
   right: 32px;
   color: white;
+  background-color: transparent;
   font-family: 'Superclarendon Light', serif;
-  font-size: 13px;
+  font-size: calc((100vh - 300px)/18 - 15px);
   line-height: calc((100vh - 300px)/18);
   z-index: 100;
   float: right;
