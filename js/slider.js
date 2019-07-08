@@ -1,3 +1,14 @@
+$(document).ready(function(){    
+    //Check if the current URL contains '# or hash'
+    if(document.URL.indexOf("#")==-1){
+        // Set the URL to whatever it was plus "#loaded".
+        url = document.URL+"#loaded";
+        location = "#loaded";
+        //Reload the page using reload() method
+        location.reload(true);
+    }
+});
+
 $(document).ready(function(){
   var $imgWidth = $('#slider_images1 img').first().outerWidth();//read the image width
   var $imgCount = $('#slider_images1 img').length;//count the images
@@ -780,7 +791,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).on('load', function(){
+$(document).ready(function(){
   var $imgWidth = $('#slider_images18 img').first().outerWidth();
   var $imgCount = $('#slider_images18 img').length;
   $('#slider_images18').width($imgWidth*($imgCount+2));
