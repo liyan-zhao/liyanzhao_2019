@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LIYAN ZHAO</title>
+
+  <link rel="stylesheet" type="text/css" href="css/home_grid.css">
+  <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400i&display=swap" rel="stylesheet">
+
+  <script type="text/javascript" src="js/assets/js/lib/jquery.min.js"></script>
+  <script type="text/javascript" src="js/assets/js/lib/highlight.pack.js"></script>
+  <script type="text/javascript" src="js/assets/js/lib/modernizr.custom.min.js"></script>
+  <script type="text/javascript" src="js/assets/js/examples.js"></script>
+
+  <script type="text/javascript" src="js/assets/js/lib/greensock/TweenMax.min.js"></script>
+  <script type="text/javascript" src="js/scrollmagic/uncompressed/ScrollMagic.js"></script>
+  <script type="text/javascript" src="js/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+</head>
+
+<body>
+  <div class="sitename">Liyan Zhao</div>
+  <div class="sidenav">
+    <div class="closebtn" onclick="closeNav()">&times;</div>
+    <div class="bio">
+      Liyan is a visual storyteller working primarily across video and web. She is especially invested in telling stories of border spaces. Moving from China to the US as a child and growing up near the US-Mexican border, she has experienced firsthand the importance of imagination and mythology as tools of survival in these kinds of liminal spaces.<br><br>Liyan holds an MFA in design from Yale School of Art and a BA in architecture from Princeton University.
+      <div class="contact">
+        <span class="semi">CONTACT</span><br><a href = "mailto: heyliyanzhao@gmail.com">heyliyanzhao@gmail.com</a><br>
+      </div>
+      <div class="cv">
+        <span class="semi">CV</span><br><a href="cv-liyan.pdf" download>Download CV (pdf)</a>
+      </div>
+    </div>
+</div>
+
+  <div class="menu">
+    <div class="about" onclick="openNav()">Liyan Zhao</div>
+    <a class="size" href="home_full.html#1">full</a>
+    <div id="select" class="size">grid</div>
+  </div>
+
+  <div class="tagcontainer">
+    <div id="tag1" class="tag" onclick="tagAll()">all</div>
+    <div id="tag2" class="tag" onclick="tagVideo()">video</div>
+    <div id="tag3" class="tag" onclick="tagPrint()">print</div>
+    <div id="tag4" class="tag" onclick="tagWeb()">interactive</div>
+  </div>
+
+  <div id="workcontainer">
+    <div class="tile tvideo">
+      <div id="slider_box1" class="sliderbox">
+        <div id="slider_images1" class="sliderimg">
+          <img src="images/01/3.jpg">
+          <img src="images/01/1.jpg">
+          <img src="images/01/2.jpg">
+        </div>
+        <div id="left1" class="endless_slider_left"></div>
+        <div id="right1" class="endless_slider_right"></div>
+      </div>
+      <div id="count1" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#1">A House of One's Own</a></div>
+    </div>
+
+    <div class="tile tvideo">
+      <div id="slider_box2" class="sliderbox">
+        <div id="slider_images2" class="sliderimg">
+          <img src="images/02/1.jpg">
+          <img src="images/02/2.jpg">
+          <!-- <img src="images/02/3.jpg"> -->
+          <img src="images/02/4.jpg">
+        </div>
+        <div id="left2" class="endless_slider_left"></div>
+        <div id="right2" class="endless_slider_right"></div>
+      </div>
+      <div id="count2" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#3">Body in Crisis</a></div>
+    </div>
+
+    <div class="tile tvideo">
+      <div id="slider_box3" class="sliderbox">
+        <div id="slider_images3" class="sliderimg">
+          <img src="images/03/1.jpg">
+          <!-- <img src="images/03/2.jpg"> -->
+          <!-- <img src="images/03/3.jpg"> -->
+          <img src="images/03/6.jpg">
+          <img src="images/03/4.jpg">
+        </div>
+        <div id="left3" class="endless_slider_left"></div>
+        <div id="right3" class="endless_slider_right"></div>
+      </div>
+      <div id="count3" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#5">Alcatraz</a></div>
+    </div>
+
+    <div class="tile tvideo">
+      <div id="slider_box4" class="sliderbox">
+        <div id="slider_images4" class="sliderimg">
+          <img src="images/04/1.jpg">
+          <img src="images/04/2.jpg">
+          <img src="images/04/3.jpg">
+        </div>
+        <div id="left4" class="endless_slider_left"></div>
+        <div id="right4" class="endless_slider_right"></div>
+      </div>
+      <div id="count4" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#7">Lost and Found</a></div>
+    </div>
+
+    <div class="tile tvideo">
+      <div id="slider_box5" class="sliderbox">
+        <div id="slider_images5" class="sliderimg">
+          <img src="images/05/3.jpg">
+          <img src="images/05/2.jpg">
+          <img src="images/05/4.jpg">
+        </div>
+        <div id="left5" class="endless_slider_left"></div>
+        <div id="right5" class="endless_slider_right"></div>
+      </div>
+      <div id="count5" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#9">Inhale, Exhale</a></div>
+    </div>
+
+    <div class="tile tvideo">
+      <div id="slider_box6" class="sliderbox">
+        <div id="slider_images6" class="sliderimg">
+          <img src="images/06/3.jpg">
+          <img src="images/06/2.jpg">
+          <img src="images/06/4.jpg">
+        </div>
+        <div id="left6" class="endless_slider_left"></div>
+        <div id="right6" class="endless_slider_right"></div>
+      </div>
+      <div id="count6" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#11">Secret</a></div>
+    </div>
+
+    <div class="tile tvideo">
+      <div id="slider_box7" class="sliderbox">
+        <div id="slider_images7" class="sliderimg">
+          <img src="images/07/1.jpg">
+          <img src="images/07/2.jpg">
+          <img src="images/07/3.jpg">
+          <img src="images/07/4.jpg">
+        </div>
+        <div id="left7" class="endless_slider_left"></div>
+        <div id="right7" class="endless_slider_right"></div>
+      </div>
+      <div id="count7" class="count"><span>1/4</span></div>
+      <div class="title"><a href="home_full.html#13">Transplant</a></div>
+    </div>
+
+    <div class="tile tvideo">
+      <div id="slider_box8" class="sliderbox">
+        <div id="slider_images8" class="sliderimg">
+          <img src="images/08/1.jpg">
+          <img src="images/08/2.jpg">
+          <img src="images/08/3.jpg">
+          <img src="images/08/4.jpg">
+        </div>
+        <div id="left8" class="endless_slider_left"></div>
+        <div id="right8" class="endless_slider_right"></div>
+      </div>
+      <div id="count8" class="count"><span>1/4</span></div>
+      <div class="title"><a href="home_full.html#15">Cave</a></div>
+    </div>
+
+    <div class="tile tvideo">
+      <div id="slider_box9" class="sliderbox">
+        <div id="slider_images9" class="sliderimg">
+          <img src="images/09/8.jpg">
+          <img src="images/09/1.jpg">
+          <img src="images/09/3.jpg">
+          <img src="images/09/6.jpg">
+        </div>
+        <div id="left9" class="endless_slider_left"></div>
+        <div id="right9" class="endless_slider_right"></div>
+      </div>
+      <div id="count9" class="count"><span>1/4</span></div>
+      <div class="title"><a href="home_full.html#17">Pandamonium</a></div>
+    </div>
+
+    <div class="tile tprint">
+      <div id="slider_box10" class="sliderbox">
+        <div id="slider_images10" class="sliderimg">
+          <!-- <img src="images/10/2.jpg"> -->
+          <img src="images/10/3.jpg">
+          <img src="images/10/4.jpg">
+          <img src="images/10/5.jpg">
+          <!-- <img src="images/10/1.jpg"> -->
+          <!-- <img src="images/10/6.jpg"> -->
+        </div>
+        <div id="left10" class="endless_slider_left"></div>
+        <div id="right10" class="endless_slider_right"></div>
+      </div>
+      <div id="count10" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#19">My Name is Juan</a></div>
+    </div>
+
+    <div class="tile tprint">
+      <div id="slider_box11" class="sliderbox">
+        <div id="slider_images11" class="sliderimg">
+          <img src="test2.jpg">
+          <img src="test3.jpg">
+          <img src="test1.jpg">
+        </div>
+        <div id="left11" class="endless_slider_left"></div>
+        <div id="right11" class="endless_slider_right"></div>
+      </div>
+      <div id="count11" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#21">Border Reader</a></div>
+    </div>
+
+    <div class="tile tprint">
+      <div id="slider_box12" class="sliderbox">
+        <div id="slider_images12" class="sliderimg">
+          <!-- <img src="images/12/1.jpg"> -->
+          <img src="images/12/2.jpg">
+          <img src="images/12/3.jpg">
+          <img src="images/12/6.jpg">
+          <img src="images/12/8.jpg">
+          <img src="images/12/7.jpg">
+        </div>
+        <div id="left12" class="endless_slider_left"></div>
+        <div id="right12" class="endless_slider_right"></div>
+      </div>
+      <div id="count12" class="count"><span>1/5</span></div>
+      <div class="title"><a href="home_full.html#23">You've Arrived</a></div>
+    </div>
+
+    <div class="tile tprint">
+      <div id="slider_box13" class="sliderbox">
+        <div id="slider_images13" class="sliderimg">
+          <img src="test1.jpg">
+          <img src="test2.jpg">
+          <img src="test3.jpg">
+        </div>
+        <div id="left13" class="endless_slider_left"></div>
+        <div id="right13" class="endless_slider_right"></div>
+      </div>
+      <div id="count13" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#25">O-14 Monograph</a></div>
+    </div>
+
+    <div class="tile tprint">
+      <div id="slider_box14" class="sliderbox">
+        <div id="slider_images14" class="sliderimg">
+          <img src="images/14/2.jpg">
+          <img src="images/14/3.jpg">
+          <img src="images/14/1.jpg">
+        </div>
+        <div id="left14" class="endless_slider_left"></div>
+        <div id="right14" class="endless_slider_right"></div>
+      </div>
+      <div id="count14" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#27">The radical Other</a></div>
+    </div>
+
+    <div class="tile tweb">
+      <div id="slider_box15" class="sliderbox">
+        <div id="slider_images15" class="sliderimg">
+          <img src="images/15/1.jpg">
+        </div>
+        <div id="left15" class="endless_slider_left"></div>
+        <div id="right15" class="endless_slider_right"></div>
+      </div>
+      <div id="count15" class="count"><span>1/1</span></div>
+      <div class="title"><a href="home_full.html#29">First Year MFA Show</a></div>
+    </div>
+
+    <div class="tile tweb">
+      <div id="slider_box16" class="sliderbox">
+        <div id="slider_images16" class="sliderimg">
+          <img src="test1.jpg">
+          <img src="test2.jpg">
+          <img src="test3.jpg">
+        </div>
+        <div id="left16" class="endless_slider_left"></div>
+        <div id="right16" class="endless_slider_right"></div>
+      </div>
+      <div id="count16" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#31">Shadow Puppet Archive</a></div>
+    </div>
+
+    <div class="tile tweb">
+      <div id="slider_box17" class="sliderbox">
+        <div id="slider_images17" class="sliderimg">
+          <img src="images/17/1.jpg">
+          <img src="images/17/2.jpg">
+          <img src="images/17/4.jpg">
+          <img src="images/17/3.jpg">
+        </div>
+        <div id="left17" class="endless_slider_left"></div>
+        <div id="right17" class="endless_slider_right"></div>
+      </div>
+      <div id="count17" class="count"><span>1/4</span></div>
+      <div class="title"><a href="home_full.html#33">Violin Phase</a></div>
+    </div>
+
+    <div class="tile tweb">
+      <div id="slider_box18" class="sliderbox">
+        <div id="slider_images18" class="sliderimg">
+          <img src="images/18/1.jpg">
+          <img src="images/18/2.jpg">
+          <img src="images/18/3.jpg">
+          <img src="images/18/4.jpg">
+        </div>
+        <div id="left18" class="endless_slider_left"></div>
+        <div id="right18" class="endless_slider_right"></div>
+      </div>
+      <div id="count18" class="count"><span>1/3</span></div>
+      <div class="title"><a href="home_full.html#35">Unreading Language</a></div>
+    </div>
+
+  </div>
+
+  <script>
+      function openNav() {
+          $('.sidenav').css('transform', 'translateX(0)');
+          $('.closebtn').css('opacity', 1);
+          $('.sitename').css('border-bottom-width', '2.4px');
+      };
+
+      function closeNav() {
+          $('.sidenav').css('transform', 'translateX(-80vw)');
+          $('.closebtn').css('opacity', 0);
+          $('.sitename').css('border-bottom-width', 0);
+      };
+  </script>
+
+<script>
+      $(document).click(function(event) { 
+        var $trigger = $('.closebtn');
+        var $target = $(event.target);            
+          if ($trigger.css('opacity') !== '0') {
+        if(!$target.closest('.sidenav').length){closeNav()}
+          }
+    });
+  </script>
+
+  <script src="js/slider.js"></script>
+
+  <script type="text/javascript">
+    function tagAll() {
+      $("#tag1").css('border-bottom-width', 2);
+      $("#tag2").css('border-bottom-width', 0);
+      $("#tag3").css('border-bottom-width', 0);
+      $("#tag4").css('border-bottom-width', 0);
+      if($(".tvideo").css('display') == "none"){
+            $(".tvideo").css('display', 'block');
+      };
+      if($(".tprint").css('display') == "none"){
+            $(".tprint").css('display', 'block');
+      };
+      if($(".tweb").css('display') == "none"){
+            $(".tweb").css('display', 'block');
+      };
+    };
+
+    function tagVideo() {
+      $("#tag1").css('border-bottom-width', 0);
+      $("#tag2").css('border-bottom-width', 2);
+      $("#tag3").css('border-bottom-width', 0);
+      $("#tag4").css('border-bottom-width', 0);
+      if($(".tvideo").css('display') == "none"){
+            $(".tvideo").css('display', 'block');
+      };
+      if($(".tprint").css('display') == "block"){
+            $(".tprint").css('display', 'none');
+      };
+      if($(".tweb").css('display') == "block"){
+            $(".tweb").css('display', 'none');
+      };
+    };
+
+    function tagPrint() {
+      $("#tag1").css('border-bottom-width', 0);
+      $("#tag2").css('border-bottom-width', 0);
+      $("#tag3").css('border-bottom-width', 2);
+      $("#tag4").css('border-bottom-width', 0);
+      if($(".tvideo").css('display') == "block"){
+            $(".tvideo").css('display', 'none');
+      };
+      if($(".tprint").css('display') == "none"){
+            $(".tprint").css('display', 'block');
+      };
+      if($(".tweb").css('display') == "block"){
+            $(".tweb").css('display', 'none');
+      };
+    };
+
+    function tagWeb() {
+      $("#tag1").css('border-bottom-width', 0);
+      $("#tag2").css('border-bottom-width', 0);
+      $("#tag3").css('border-bottom-width', 0);
+      $("#tag4").css('border-bottom-width', 2);
+      if($(".tvideo").css('display') == "block"){
+            $(".tvideo").css('display', 'none');
+      };
+      if($(".tprint").css('display') == "block"){
+            $(".tprint").css('display', 'none');
+      };
+      if($(".tweb").css('display') == "none"){
+            $(".tweb").css('display', 'block');
+      };
+    };
+  </script>
+
+</body>
+</html>
