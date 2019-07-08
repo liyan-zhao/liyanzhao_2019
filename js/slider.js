@@ -1,28 +1,4 @@
 $(document).ready(function(){
-
-  function cacheImages(array)
-{
-    if (!cacheImages.list) {
-        cacheImages.list = [];
-    }
-    var list = cacheImages.list;
-    for (var i = 0; i < array.length; i++) {
-        var img = new Image();
-        img.onload = function() {
-            var index = list.indexOf(this);
-            if (index !== -1) {
-                // remove image from the array once it's loaded
-                // for memory consumption reasons
-                list.splice(index, 1);
-            }
-        }
-        list.push(img);
-        img.src = array[i];
-    }
-}
-
-cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02/1.jpg", "images/02/2.jpg", "images/02/4.jpg","images/03/1.jpg", "images/03/4.jpg", "images/03/6.jpg","images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
-
   var $imgWidth = $('#slider_images1 img').first().outerWidth();//read the image width
   var $imgCount = $('#slider_images1 img').length;//count the images
   $('#slider_images1').width($imgWidth*($imgCount+2));//set the width of the container to the number of images - plus 2 to account for the cloned images
@@ -69,31 +45,6 @@ cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02
 });
 
 $(document).ready(function(){
-
-  function cacheImages(array)
-{
-    if (!cacheImages.list) {
-        cacheImages.list = [];
-    }
-    var list = cacheImages.list;
-    for (var i = 0; i < array.length; i++) {
-        var img = new Image();
-        img.onload = function() {
-            var index = list.indexOf(this);
-            if (index !== -1) {
-                // remove image from the array once it's loaded
-                // for memory consumption reasons
-                list.splice(index, 1);
-            }
-        }
-        list.push(img);
-        img.src = array[i];
-    }
-}
-
-cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02/1.jpg", "images/02/2.jpg", "images/02/4.jpg","images/03/1.jpg", "images/03/4.jpg", "images/03/6.jpg","images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
-
-
   var $imgWidth = $('#slider_images2 img').first().outerWidth();
   var $imgCount = $('#slider_images2 img').length;
   $('#slider_images2').width($imgWidth*($imgCount+2));
@@ -140,30 +91,6 @@ cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02
 });
 
 $(document).ready(function(){
-
-  function cacheImages(array)
-{
-    if (!cacheImages.list) {
-        cacheImages.list = [];
-    }
-    var list = cacheImages.list;
-    for (var i = 0; i < array.length; i++) {
-        var img = new Image();
-        img.onload = function() {
-            var index = list.indexOf(this);
-            if (index !== -1) {
-                // remove image from the array once it's loaded
-                // for memory consumption reasons
-                list.splice(index, 1);
-            }
-        }
-        list.push(img);
-        img.src = array[i];
-    }
-}
-
-cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02/1.jpg", "images/02/2.jpg", "images/02/4.jpg","images/03/1.jpg", "images/03/4.jpg", "images/03/6.jpg","images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
-
   var $imgWidth = $('#slider_images3 img').first().outerWidth();
   var $imgCount = $('#slider_images3 img').length;
   $('#slider_images3').width($imgWidth*($imgCount+2));
@@ -210,30 +137,6 @@ cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02
 });
 
 $(document).ready(function(){
-
-  function cacheImages(array)
-{
-    if (!cacheImages.list) {
-        cacheImages.list = [];
-    }
-    var list = cacheImages.list;
-    for (var i = 0; i < array.length; i++) {
-        var img = new Image();
-        img.onload = function() {
-            var index = list.indexOf(this);
-            if (index !== -1) {
-                // remove image from the array once it's loaded
-                // for memory consumption reasons
-                list.splice(index, 1);
-            }
-        }
-        list.push(img);
-        img.src = array[i];
-    }
-}
-
-cacheImages(["images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
-
   var $imgWidth = $('#slider_images4 img').first().outerWidth();
   var $imgCount = $('#slider_images4 img').length;
   $('#slider_images4').width($imgWidth*($imgCount+2));
@@ -280,30 +183,6 @@ cacheImages(["images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/
 });
 
 $(document).ready(function(){
-
-  function cacheImages(array)
-{
-    if (!cacheImages.list) {
-        cacheImages.list = [];
-    }
-    var list = cacheImages.list;
-    for (var i = 0; i < array.length; i++) {
-        var img = new Image();
-        img.onload = function() {
-            var index = list.indexOf(this);
-            if (index !== -1) {
-                // remove image from the array once it's loaded
-                // for memory consumption reasons
-                list.splice(index, 1);
-            }
-        }
-        list.push(img);
-        img.src = array[i];
-    }
-}
-
-cacheImages(["images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
-
   var $imgWidth = $('#slider_images5 img').first().outerWidth();
   var $imgCount = $('#slider_images5 img').length;
   $('#slider_images5').width($imgWidth*($imgCount+2));
@@ -901,7 +780,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(document).on('load', function(){
   var $imgWidth = $('#slider_images18 img').first().outerWidth();
   var $imgCount = $('#slider_images18 img').length;
   $('#slider_images18').width($imgWidth*($imgCount+2));
