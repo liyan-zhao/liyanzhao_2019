@@ -232,7 +232,7 @@ $(document).ready(function(){
     }
 }
 
-cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02/1.jpg", "images/02/2.jpg", "images/02/4.jpg","images/03/1.jpg", "images/03/4.jpg", "images/03/6.jpg","images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
+cacheImages(["images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
 
   var $imgWidth = $('#slider_images4 img').first().outerWidth();
   var $imgCount = $('#slider_images4 img').length;
@@ -280,6 +280,30 @@ cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02
 });
 
 $(document).ready(function(){
+
+  function cacheImages(array)
+{
+    if (!cacheImages.list) {
+        cacheImages.list = [];
+    }
+    var list = cacheImages.list;
+    for (var i = 0; i < array.length; i++) {
+        var img = new Image();
+        img.onload = function() {
+            var index = list.indexOf(this);
+            if (index !== -1) {
+                // remove image from the array once it's loaded
+                // for memory consumption reasons
+                list.splice(index, 1);
+            }
+        }
+        list.push(img);
+        img.src = array[i];
+    }
+}
+
+cacheImages(["images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
+
   var $imgWidth = $('#slider_images5 img').first().outerWidth();
   var $imgCount = $('#slider_images5 img').length;
   $('#slider_images5').width($imgWidth*($imgCount+2));
