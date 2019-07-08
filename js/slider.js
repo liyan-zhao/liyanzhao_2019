@@ -1,3 +1,27 @@
+function cacheImages(array)
+{
+    if (!cacheImages.list) {
+        cacheImages.list = [];
+    }
+    var list = cacheImages.list;
+    for (var i = 0; i < array.length; i++) {
+        var img = new Image();
+        img.onload = function() {
+            var index = list.indexOf(this);
+            if (index !== -1) {
+                // remove image from the array once it's loaded
+                // for memory consumption reasons
+                list.splice(index, 1);
+            }
+        }
+        list.push(img);
+        img.src = array[i];
+    }
+}
+
+cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02/1.jpg", "images/02/2.jpg", "images/02/4.jpg","images/03/1.jpg", "images/03/4.jpg", "images/03/6.jpg",]);
+
+
 $(document).ready(function(){
   var $imgWidth = $('#slider_images1 img').first().outerWidth();//read the image width
   var $imgCount = $('#slider_images1 img').length;//count the images
