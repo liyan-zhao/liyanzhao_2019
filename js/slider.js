@@ -1,15 +1,5 @@
-$(document).ready(function(){    
-    //Check if the current URL contains '# or hash'
-    if(document.URL.indexOf("#")==-1){
-        // Set the URL to whatever it was plus "#loaded".
-        url = document.URL+"#loaded";
-        location = "#loaded";
-        //Reload the page using reload() method
-        location.reload(true);
-    }
-});
-
-$(document).ready(function(){
+$(window).on('load', function(){
+  alert("images are loaded!");
   var $imgWidth = $('#slider_images1 img').first().outerWidth();//read the image width
   var $imgCount = $('#slider_images1 img').length;//count the images
   $('#slider_images1').width($imgWidth*($imgCount+2));//set the width of the container to the number of images - plus 2 to account for the cloned images
@@ -55,7 +45,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images2 img').first().outerWidth();
   var $imgCount = $('#slider_images2 img').length;
   $('#slider_images2').width($imgWidth*($imgCount+2));
@@ -101,7 +91,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images3 img').first().outerWidth();
   var $imgCount = $('#slider_images3 img').length;
   $('#slider_images3').width($imgWidth*($imgCount+2));
@@ -147,7 +137,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images4 img').first().outerWidth();
   var $imgCount = $('#slider_images4 img').length;
   $('#slider_images4').width($imgWidth*($imgCount+2));
@@ -193,7 +183,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images5 img').first().outerWidth();
   var $imgCount = $('#slider_images5 img').length;
   $('#slider_images5').width($imgWidth*($imgCount+2));
@@ -239,7 +229,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images6 img').first().outerWidth();
   var $imgCount = $('#slider_images6 img').length;
   $('#slider_images6').width($imgWidth*($imgCount+2));
@@ -285,7 +275,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images7 img').first().outerWidth();
   var $imgCount = $('#slider_images7 img').length;
   $('#slider_images7').width($imgWidth*($imgCount+2));
@@ -331,7 +321,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images8 img').first().outerWidth();
   var $imgCount = $('#slider_images8 img').length;
   $('#slider_images8').width($imgWidth*($imgCount+2));
@@ -377,7 +367,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images9 img').first().outerWidth();
   var $imgCount = $('#slider_images9 img').length;
   $('#slider_images9').width($imgWidth*($imgCount+2));
