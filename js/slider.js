@@ -19,7 +19,7 @@ function cacheImages(array)
     }
 }
 
-cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02/1.jpg", "images/02/2.jpg", "images/02/4.jpg","images/03/1.jpg", "images/03/4.jpg", "images/03/6.jpg","images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg",]);
+cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02/1.jpg", "images/02/2.jpg", "images/02/4.jpg","images/03/1.jpg", "images/03/4.jpg", "images/03/6.jpg","images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
 
 
 $(document).ready(function(){
