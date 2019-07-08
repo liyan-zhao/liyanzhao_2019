@@ -1,4 +1,6 @@
-function cacheImages(array)
+$(document).ready(function(){
+
+  function cacheImages(array)
 {
     if (!cacheImages.list) {
         cacheImages.list = [];
@@ -21,8 +23,6 @@ function cacheImages(array)
 
 cacheImages(["images/01/1.jpg", "images/01/2.jpg", "images/01/3.jpg", "images/02/1.jpg", "images/02/2.jpg", "images/02/4.jpg","images/03/1.jpg", "images/03/4.jpg", "images/03/6.jpg","images/04/1.jpg", "images/04/2.jpg", "images/04/3.jpg","images/05/2.jpg", "images/05/3.jpg", "images/05/4.jpg","images/06/2.jpg", "images/06/3.jpg", "images/06/4.jpg",]);
 
-
-$(document).ready(function(){
   var $imgWidth = $('#slider_images1 img').first().outerWidth();//read the image width
   var $imgCount = $('#slider_images1 img').length;//count the images
   $('#slider_images1').width($imgWidth*($imgCount+2));//set the width of the container to the number of images - plus 2 to account for the cloned images
