@@ -1,5 +1,4 @@
 $(window).on('load', function(){
-  alert("images are loaded!");
   var $imgWidth = $('#slider_images1 img').first().outerWidth();//read the image width
   var $imgCount = $('#slider_images1 img').length;//count the images
   $('#slider_images1').width($imgWidth*($imgCount+2));//set the width of the container to the number of images - plus 2 to account for the cloned images
@@ -413,7 +412,7 @@ $(window).on('load', function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images10 img').first().outerWidth();
   var $imgCount = $('#slider_images10 img').length;
   $('#slider_images10').width($imgWidth*($imgCount+2));
@@ -459,7 +458,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images11 img').first().outerWidth();
   var $imgCount = $('#slider_images11 img').length;
   $('#slider_images11').width($imgWidth*($imgCount+2));
@@ -505,7 +504,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images12 img').first().outerWidth();
   var $imgCount = $('#slider_images12 img').length;
   $('#slider_images12').width($imgWidth*($imgCount+2));
@@ -551,7 +550,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images13 img').first().outerWidth();
   var $imgCount = $('#slider_images13 img').length;
   $('#slider_images13').width($imgWidth*($imgCount+2));
@@ -597,7 +596,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images14 img').first().outerWidth();
   var $imgCount = $('#slider_images14 img').length;
   $('#slider_images14').width($imgWidth*($imgCount+2));
@@ -643,7 +642,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images15 img').first().outerWidth();
   var $imgCount = $('#slider_images15 img').length;
   $('#slider_images15').width($imgWidth*($imgCount+2));
@@ -689,7 +688,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images16 img').first().outerWidth();
   var $imgCount = $('#slider_images16 img').length;
   $('#slider_images16').width($imgWidth*($imgCount+2));
@@ -735,7 +734,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images17 img').first().outerWidth();
   var $imgCount = $('#slider_images17 img').length;
   $('#slider_images17').width($imgWidth*($imgCount+2));
@@ -781,7 +780,7 @@ $(document).ready(function(){
    });
 });
 
-$(document).ready(function(){
+$(window).on('load', function(){
   var $imgWidth = $('#slider_images18 img').first().outerWidth();
   var $imgCount = $('#slider_images18 img').length;
   $('#slider_images18').width($imgWidth*($imgCount+2));
