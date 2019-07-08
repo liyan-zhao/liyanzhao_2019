@@ -139,7 +139,7 @@ a:visited {
   color: white;
   font-family: 'Superclarendon Light', serif;
   font-size: 13px;
-  line-height: 30px;
+  line-height: calc((100vh - 300px)/18);
   z-index: 100;
   float: right;
   /*background-color: blue;*/
