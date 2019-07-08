@@ -103,7 +103,7 @@ a:visited {
 /*--------------------------------------------------*/
 
 .tagcontainer {
-  top: calc(33vh - 5px);
+  top: 244px;
   position: fixed;
   width: 173px;
   right: 32px;
@@ -160,7 +160,7 @@ a:visited {
 /*--------------------------------------------------*/
 
 #workcontainer {
-  padding-top: 33vh;
+  padding-top: 250px;
   display: flex;
   width: calc(100vw - 260px);
   margin-left: 35px;
