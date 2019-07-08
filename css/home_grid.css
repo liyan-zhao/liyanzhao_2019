@@ -103,7 +103,7 @@ a:visited {
 /*--------------------------------------------------*/
 
 .tagcontainer {
-  top: 244px;
+  top: 245px;
   position: fixed;
   width: 173px;
   right: 32px;
@@ -298,7 +298,7 @@ a:visited {
 
 .sidenav .bio {
   position: absolute;
-  top: 200px;
+  top: 243px;
   left: 32px;
   width: calc(100% - 64px);
   color: black;
