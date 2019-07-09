@@ -1,0 +1,65 @@
+body{
+			background-color: black;
+			margin: 0;
+		}
+
+		a:visited{
+			text-decoration: none;
+			color: white;
+		}
+
+		a{
+			text-decoration: none;
+			color: white;
+		}
+
+		a:hover{
+			text-decoration: underline;
+			color: white;
+		}
+
+		#dancetitle{
+			position: fixed;
+			font: 16px courier, monospace;
+			margin-left: calc(100vw - 410px);
+			margin-top: 10px;	
+			color: white;	
+			/*text-transform: uppercase;*/
+		}
+
+		#quote{
+			position: absolute;
+			font: 25px "courier", monospace;
+			line-height: 2;
+			color: white;
+			left: 200px;
+			margin-top: calc(50vh - 50px);	
+			-webkit-animation: flicker 3s infinite;
+		}
+
+		@-webkit-keyframes flicker
+			{
+			0% {opacity:.5;}
+			10% {opacity:1;}
+			13% {opacity:.5;}
+			20% {opacity:.5;}
+			25% {opacity:1;}
+			30% {opacity:.5;}
+			33% {opacity:1;}
+			43% {opacity:.5;}
+			47% {opacity:.5;}
+			50% {opacity:1;}
+			55% {opacity:.5;}
+			60% {opacity:1;}
+			70% {opacity:.5;}
+			88% {opacity:1;}
+			95% {opacity:.5;}
+			}
+
+		#myVideo {
+		  position: fixed;
+		  right: 0;
+		  bottom: 0;
+		  min-width: 100vw; 
+		  min-height: 100vh;
+		}

@@ -1,0 +1,404 @@
+<html lang="en">
+<head>
+	<title>Violin Phase</title>
+	<link rel="stylesheet" type="text/css" href="css/dance.css">
+</head>
+
+<body>
+<video loop id="myvideo" src="videos/dancediagram_moreblur.mp4" preload="true" ontimeupdate="document.getElementById('tracktime').innerHTML = Math.floor(this.currentTime) + ' / ' + Math.floor(this.duration);">
+</video>
+
+<img id="still" src= "images/atdk_01.jpg">
+
+<div id="tracktime">0 / 407</div>
+
+<div id="dancetitle"><a href="about.html">< ABOUT</a></div>
+
+<div id="initialplay" onclick="hideinitial(this); play()"><img src= "images/play_w.svg"></div>
+
+<div id="audioplayer">
+    <div id="pButton" onclick="frozen();" onmouseenter="seeicon(this)" onmouseleave="hideicon(this)"><img id="playbutton1" src= "images/pause_w.svg"></div>
+    	<div id="timeline">
+        <div id="playhead"></div>
+    </div>
+</div>
+
+<div id="pButton2"><img id="play2" src= "images/play_w.svg"></div>
+
+<div id="view_f_container" class="title" onclick="activatef();">front view</div>
+<div id="view_l_container" class="title" onclick="activatel();">left view</div>
+<div id="view_b_container" class="title" onclick="activateb();">back view</div>
+<div id="view_r_container" class="title" onclick="activater();">right view</div>
+
+<div id="view_f_container2" class="title"></div>
+<div id="view_l_container2" class="title"></div>
+<div id="view_b_container2" class="title"></div>
+<div id="view_r_container2" class="title"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+	var still = document.getElementById('still');
+	var video = document.getElementById('myvideo'); // id for audio element
+	var duration = video.duration; // Duration of audio clip, calculated here for embedding purposes
+	var pButton = document.getElementById('pButton'); // play button
+	var pButton2 = document.getElementById('pButton2');
+	var playhead = document.getElementById('playhead'); // playhead
+	var timeline = document.getElementById('timeline'); // timeline
+
+	// timeline width adjusted for playhead
+	var timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+
+	var containerf = document.getElementById('view_f_container');
+	var containerl = document.getElementById('view_l_container');
+	var containerb = document.getElementById('view_b_container');
+	var containerr = document.getElementById('view_r_container');
+	var containerf2 = document.getElementById('view_f_container2');
+	var containerl2 = document.getElementById('view_l_container2');
+	var containerb2 = document.getElementById('view_b_container2');
+	var containerr2 = document.getElementById('view_r_container2');
+
+	function hideinitial(x) {
+	  x.style.visibility = "hidden";
+	}
+
+	function seeicon(x) {
+	  x.style.opacity = "1";
+	}
+
+	function hideicon(x) {
+	  x.style.opacity = "0";
+	}
+
+	// play button event listenter
+	pButton.addEventListener("click", play);
+	pButton2.addEventListener("click", play);
+
+	// timeupdate event listener
+	video.addEventListener("timeupdate", timeUpdate, false);
+
+	// makes timeline clickable
+	timeline.addEventListener("click", function(event) {
+	    moveplayhead(event);
+	    video.currentTime = duration * clickPercent(event);
+	}, false);
+
+	// returns click as decimal (.77) of the total timelineWidth
+	function clickPercent(event) {
+	    return (event.clientX - getPosition(timeline)) / timelineWidth;
+	}
+
+	// makes playhead draggable
+	playhead.addEventListener('mousedown', mouseDown, false);
+	window.addEventListener('mouseup', mouseUp, false);
+
+	// Boolean value so that audio position is updated only when the playhead is released
+	var onplayhead = false;
+
+	// mouseDown EventListener
+	function mouseDown() {
+	    onplayhead = true;
+	    window.addEventListener('mousemove', moveplayhead, true);
+	    video.removeEventListener('timeupdate', timeUpdate, false);
+	}
+
+	// mouseUp EventListener
+	// getting input from all mouse clicks
+	function mouseUp(event) {
+	    if (onplayhead == true) {
+	        moveplayhead(event);
+	        window.removeEventListener('mousemove', moveplayhead, true);
+	        // change current time
+	        video.currentTime = duration * clickPercent(event);
+	        video.addEventListener('timeupdate', timeUpdate, false);
+	    }
+	    onplayhead = false;
+	}
+	// mousemove EventListener
+	// Moves playhead as user drags
+	function moveplayhead(event) {
+	    var newMargLeft = event.clientX - getPosition(timeline);
+
+	    if (newMargLeft >= 0 && newMargLeft <= timelineWidth) {
+	        playhead.style.marginLeft = newMargLeft + "px";
+	    }
+	    if (newMargLeft < 0) {
+	        playhead.style.marginLeft = "0px";
+	    }
+	    if (newMargLeft > timelineWidth) {
+	        playhead.style.marginLeft = timelineWidth + "px";
+	    }
+	}
+
+	// timeUpdate
+	// Synchronizes playhead position with current point in audio
+	function timeUpdate() {
+	    var playPercent = timelineWidth * (video.currentTime / duration);
+	    playhead.style.marginLeft = playPercent + "px";
+	    if (video.currentTime == duration) {
+	        pButton.className = "";
+	        pButton.className = "play";
+	        pButton2.className = "";
+	        pButton2.className = "play";
+	    }
+	}
+
+	//Play and Pause
+	function play() {
+	    // start video
+	    if (video.paused) {
+	        video.play();
+	        // remove play, add pause
+	        // document.getElementById("playbutton1").src = "pause_w.svg";
+	        still.style.visibility = "hidden";
+	        pButton2.style.visibility = "hidden";
+	        containerf2.style.visibility = "hidden";
+	        containerl2.style.visibility = "hidden";
+	        containerb2.style.visibility = "hidden";
+	        containerr2.style.visibility = "hidden";
+	        containerf.style.visibility = "visible";
+	        containerl.style.visibility = "visible";
+	        containerb.style.visibility = "visible";
+	        containerr.style.visibility = "visible";
+
+	    } else { // pause video
+	        video.pause();
+	        // remove pause, add play
+	        // document.getElementById("playbutton1").src = "pause_w.svg";
+	        still.style.visibility = "visible";
+	        pButton2.style.visibility = "visible";
+	        containerf2.style.visibility = "visible";
+	        containerl2.style.visibility = "visible";
+	        containerb2.style.visibility = "visible";
+	        containerr2.style.visibility = "visible";
+	        containerf.style.visibility = "hidden";
+	        containerl.style.visibility = "hidden";
+	        containerb.style.visibility = "hidden";
+	        containerr.style.visibility = "hidden";
+	    }
+	}
+
+	// Gets audio file duration
+	video.addEventListener("canplaythrough", function() {
+	    duration = video.duration;
+	}, false);
+
+	// getPosition
+	// Returns elements left position relative to top-left of viewport
+	function getPosition(el) {
+	    return el.getBoundingClientRect().left;
+	}
+
+
+	function changeview_l(){
+		video.className = 'view_l';
+	}
+
+	function changeview_b(){
+		video.className = 'view_b';
+	}
+
+	function changeview_r(){
+		video.className = 'view_r';
+	}
+
+
+	
+	function frozen(){
+		var still = document.getElementById('still');
+		var N = 10;  // # of images
+		var i = 1;
+		var j;
+		var piecelength = 254 / N;
+		
+		if (video.paused )
+		{
+			still.style.display = 'none';
+		}
+		else 
+		{			
+			if(video.currentTime < 16)
+			{
+				still.style.display = 'block';
+			}
+			else if(video.currentTime < 19)
+			{
+				document.getElementById('still').src = "images/atdk_02.jpg";
+			}
+			else if(video.currentTime < 76)
+			{
+				document.getElementById('still').src = "images/atdk_03.jpg";
+			}
+			else if(video.currentTime < 114)
+			{
+				document.getElementById('still').src = "images/atdk_04.jpg";
+			}
+			else if(video.currentTime < 126)
+			{
+				document.getElementById('still').src = "images/atdk_05.jpg";
+			}
+			else if(video.currentTime < 132)
+			{
+				document.getElementById('still').src = "images/atdk_06.jpg";
+			}
+			else if(video.currentTime < 153)
+			{
+				document.getElementById('still').src = "images/atdk_07.jpg";
+			}
+			else if(video.currentTime < 160)
+			{
+				document.getElementById('still').src = "images/atdk_08.jpg";
+			}
+			else if(video.currentTime < 189)
+			{
+				document.getElementById('still').src = "images/atdk_09.jpg";
+			}
+			else if(video.currentTime < 191)
+			{
+				document.getElementById('still').src = "images/atdk_10.jpg";
+			}
+			else if(video.currentTime < 252)
+			{
+				document.getElementById('still').src = "images/atdk_13.jpg";
+			}
+			else if(video.currentTime < 256)
+			{
+				document.getElementById('still').src = "images/atdk_14.jpg";
+			}
+			else if(video.currentTime < 257)
+			{
+				document.getElementById('still').src = "images/atdk_11.jpg";
+			}
+			else if(video.currentTime < 259)
+			{
+				document.getElementById('still').src = "images/atdk_12.jpg";
+			}
+			else if(video.currentTime < 269)
+			{
+				document.getElementById('still').src = "images/atdk_15.jpg";
+			}
+			else if(video.currentTime < 271)
+			{
+				document.getElementById('still').src = "images/atdk_17.jpg";
+			}
+			else if(video.currentTime < 273)
+			{
+				document.getElementById('still').src = "images/atdk_16.jpg";
+			}
+			else if(video.currentTime < 335)
+			{
+				document.getElementById('still').src = "images/atdk_18.jpg";
+			}
+			else if(video.currentTime < 397)
+			{
+				document.getElementById('still').src = "images/atdk_19.jpg";
+			}
+			else 
+			{
+				document.getElementById('still').src = "images/atdk_20.jpg";
+			}
+
+			still.style.display = 'block';
+			
+		}
+	}
+
+	function activatef(){
+		if (video.className != 'view_f') {
+			video.className = 'view_f';
+			$(containerf).css("cursor", "-webkit-zoom-out");
+
+			$(containerf).mouseenter(function() {
+			    $(this).css("background", "linear-gradient(to top, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			}).mouseleave(function() {
+			     $(this).css("background", "linear-gradient(to top, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			});
+		} 
+
+		else{
+			video.className = 'view_0';
+			$(containerf).css("cursor", "-webkit-zoom-in");
+
+			$(containerf).mouseenter(function() {
+			    $(this).css("background", "linear-gradient(to top, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			}).mouseleave(function() {
+			     $(this).css("background", "linear-gradient(to top, rgba(255,255,255,1) 70%, rgba(255,255,255,0))").css("z-index", "2");
+			});
+		}
+	}
+
+	function activatel(){
+		if (video.className != 'view_l') {
+			video.className = 'view_l';
+			$(containerl).css("cursor", "-webkit-zoom-out");
+
+			$(containerl).mouseenter(function() {
+			    $(this).css("background", "linear-gradient(to top, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			}).mouseleave(function() {
+			     $(this).css("background", "linear-gradient(to top, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			});
+		} 
+
+		else{
+			video.className = 'view_0';
+			$(containerl).css("cursor", "-webkit-zoom-in");
+
+			$(containerl).mouseenter(function() {
+			    $(this).css("background", "linear-gradient(to top, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			}).mouseleave(function() {
+			     $(this).css("background", "linear-gradient(to top, rgba(255,255,255,1) 70%, rgba(255,255,255,0))").css("z-index", "2");
+			});
+		}
+	}
+
+	function activateb(){
+		if (video.className != 'view_l') {
+			video.className = 'view_l';
+			$(containerb).css("cursor", "-webkit-zoom-out");
+
+			$(containerb).mouseenter(function() {
+			    $(this).css("background", "linear-gradient(to bottom, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			}).mouseleave(function() {
+			     $(this).css("background", "linear-gradient(to bottom, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			});
+		} 
+
+		else{
+			video.className = 'view_0';
+			$(containerb).css("cursor", "-webkit-zoom-in");
+
+			$(containerb).mouseenter(function() {
+			    $(this).css("background", "linear-gradient(to bottom, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			}).mouseleave(function() {
+			     $(this).css("background", "linear-gradient(to bottom, rgba(255,255,255,1) 70%, rgba(255,255,255,0))").css("z-index", "2");
+			});
+		}
+	}
+
+	function activater(){
+		if (video.className != 'view_r') {
+			video.className = 'view_r';
+			$(containerr).css("cursor", "-webkit-zoom-out");
+
+			$(containerr).mouseenter(function() {
+			    $(this).css("background", "linear-gradient(to top, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			}).mouseleave(function() {
+			     $(this).css("background", "linear-gradient(to top, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			});
+		} 
+
+		else{
+			video.className = 'view_0';
+			$(containerr).css("cursor", "-webkit-zoom-in");
+
+			$(containerr).mouseenter(function() {
+			    $(this).css("background", "linear-gradient(to top, rgba(255,192,203,1) 70%, rgba(255,192,203,0))").css("z-index", "3");
+			}).mouseleave(function() {
+			     $(this).css("background", "linear-gradient(to top, rgba(255,255,255,1) 70%, rgba(255,255,255,0))").css("z-index", "2");
+			});
+		}
+	}
+
+</script>
+</body>
+</html>
