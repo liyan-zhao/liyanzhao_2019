@@ -49,9 +49,15 @@ a:visited {
 }
 
 @font-face {
+  font-family: "Suisse Intl Light Italic";
+  src: url("../fonts/SuisseBPIntl-LightItalic.otf");
+}
+
+@font-face {
   font-family: "Suisse Intl Thin Italic";
   src: url("../fonts/SuisseIntl-ThinItalic.otf");
 }
+
 /*--------------------------------------------------*/
 
 #sitecontent {
@@ -148,6 +154,10 @@ a:visited {
 
 .italic {
   font-family: 'Suisse Intl Thin Italic', Helvetica, sans-serif;
+}
+
+.italic_l {
+  font-family: 'Suisse Intl Light Italic', Helvetica, sans-serif;
 }
 
 /*--------------------------------------------------*/
