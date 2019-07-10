@@ -1,0 +1,3263 @@
+html,body {padding:0; margin:0;}
+
+
+body{
+	background: white;
+}
+
+
+#lettercontainer{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	/*background-color: red;*/
+	width: 1215px;
+	/*height: calc(50%);*/
+	/*overflow: scroll;*/
+	transform: translateY(56px);
+}
+
+.tfcontainer{
+	display: flex;
+	flex-direction: column;
+	width: calc(1215px);
+	min-height: 100vh;
+	/*border-right: 1px solid black;*/
+	background-color: white
+	z-index: -100;
+	padding-left: 2.5px;
+	padding-right: 2.5px;
+}
+
+.ctrlcontainer{
+	position: fixed;
+	top: 55px;
+	right: 0px;
+	width: calc(100vw - 5px - 1215px);
+	height: calc(100% - 55px);
+	mix-blend-mode: multiply;
+	/*background-color: white;*/
+	z-index: 0;
+	border-left: 1px solid black;
+}
+
+.ctrltxt{
+	font-family: 'Libre Franklin', sans-serif;
+    font-size: 10pt;
+    letter-spacing: 0.1em;
+	margin-top: 20px;
+    margin-left: 20px;
+}
+
+/* The Modal (background) */
+.modal {
+	display: initial;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 130%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 100px auto; /* 15% from the top and centered */
+    border: 0px solid black;
+    width: 80%;
+    height: 50%;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 10pt;
+}
+
+textarea {
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	border: 1px solid black;
+	border-bottom: none;
+	outline: none;
+	resize: none;
+	font-size: 11pt;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.4);
+}
+
+textarea:focus {
+	background-color: white;
+}
+
+button {
+	position: relative;
+	background-color: white;
+    border: 1px solid black;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*padding-left: 30px;*/
+    bottom: 0;
+    cursor: pointer;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 11pt;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    outline: none;
+    width: 100%;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+button:hover {
+	/*border: 1px solid red;*/
+	/*color: red;*/
+	font-weight: bolder;
+	letter-spacing: 3em;
+	color: white;
+	background-color: black;
+}
+
+#headercontainer{
+    position: fixed;
+	border-bottom: 1px solid black;
+	width: 100%;
+	height: 55px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: normal;
+    color: black;
+    font-size: 15px;
+    letter-spacing: -.3em;
+    line-height: 1em;
+    z-index: 100;
+    background-color: white;
+    -webkit-user-select: none;
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none;
+}
+
+#headercontainer .headertitle{
+    font-weight: bolder;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+}
+
+#headercontainer:hover {
+    /*color: blue;*/
+    line-height: 1em;
+    letter-spacing: calc(100vw/18 - 12px);
+    transition: 2s;
+}
+
+.titlestyle {
+	color: black;
+	font-family: 'Libre Franklin', sans-serif;
+	text-transform: uppercase;
+	font-size: 15pt;
+	letter-spacing: 0.1em;
+	line-height: 2em;
+}
+
+/*.color{
+	color: red;
+}*/
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {display:none;}
+
+/* The slider */
+#slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: 6px;
+  padding-top: 8px;
+  background-color: black;
+  color: white;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 8pt;
+  letter-spacing: .1em;
+  transition: .4s;
+}
+
+#slider:before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 34px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + #slider {
+  background-color: black;
+}
+
+input:focus + #slider {
+  box-shadow: 0 0 1px black;
+}
+
+input:checked + #slider:before {
+  transform: translateX(34px);
+}
+
+input:hover {
+	cursor: pointer;
+}
+
+.save {
+  position: relative;
+  top: 60px;
+  left: 20px;
+  display: block;
+  width: 93px;
+  height: 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 8pt; 
+  letter-spacing: .1em;
+  text-align: center;
+  padding-top: 8px;
+  cursor: pointer;
+}
+
+.save input {display:none;}
+
+.reset {
+  position: relative;
+  top: 70px;
+  left: 20px;
+  display: block;
+  width: 93px;
+  height: 20px;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 8pt; 
+  letter-spacing: .1em;
+  padding-top: 8px;
+  text-align: center;
+ }
+
+a:link, a:visited, a:hover, a:active {
+	color: white;
+	text-decoration: none;
+}
+
+.whitecheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.whitecheck input {display:none;}
+
+.silvercheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: silver;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.silvercheck input {display:none;}
+
+.graycheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: gray;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.graycheck input {display:none;}
+
+.blackcheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: black;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.blackcheck input {display:none;}
+
+.redcheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: red;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.redcheck input {display:none;}
+
+.yellowcheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: yellow;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.yellowcheck input {display:none;}
+
+.limecheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: lime;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.limecheck input {display:none;}
+
+.aquacheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: aqua;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.aquacheck input {display:none;}
+
+.bluecheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: blue;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.bluecheck input {display:none;}
+
+.fuchsiacheck {
+  position: relative;
+  top: 5px;
+  left: 20px;
+  display: inline-block;
+  width: 10px;
+  height: 30px;
+  background-color: fuchsia;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.fuchsiacheck input {display:none;}
+
+
+/*@keyframes hvr-pop {
+  100% {
+	transform: scale(1.9,1.9);
+  }
+}
+.hvr-pop {
+	transform-origin: 0% 0%;
+}
+.hvr-pop:hover, .hvr-pop:focus, .hvr-pop:active {
+  animation-name: hvr-pop;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode:forwards;
+}*/
+
+/*----------------------------------------------*/
+
+.letter-definition {
+	display: none;
+}
+
+.letter {
+	height: 50px;
+	display: inline-block;
+	margin: 20px;
+	/*background-color: yellow;*/
+	/*transform: scale(.5);*/
+}
+
+.enter {
+	width: 50px;
+	height: 50px;
+}
+
+.space {
+	width: 50px;
+	height: 50px;
+}
+
+
+.A {
+	width: 50px;
+	position: relative;
+}
+
+.lines-A {
+	background-image: url("A.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.A .vert {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.A .hor1 {
+	left: 5px;
+	top: 22.5px;
+	width: 22.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.A .hor2 {
+	top: 45px;
+	left: 47.5px;
+	width: 2.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.A .tr {
+	left: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.A .bl {
+	left: 22.5px;
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+
+
+.B {
+	width: 50px;
+	position: relative;
+}
+
+.lines-B {
+	background-image: url("B.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.B .vert {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.B .hor1 {
+	top: 22.5px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.B .hor2 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.B .tr1 {
+	left: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.B .tr2 {
+	left: 25px;
+	top: 22.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+
+
+.C {
+	width: 50px;
+	position: relative;
+}
+
+.lines-C {
+	background-image: url("C-G.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.C .vert {
+	top: 22.5px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.C .hor1 {
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.C .hor2 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.C .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+
+
+.D {
+	width: 50px;
+	position: relative;
+}
+
+.lines-D {
+	background-image: url("D.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.D .vert1 {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.D .vert2 {
+	left: 45px;
+	top: 25px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.D .hor1 {
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.D .hor2 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.D .tr {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+
+
+.E {
+	width: 50px;
+	position: relative;
+}
+
+.lines-E {
+	background-image: url("E.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.E .vert {
+	top: 22.5px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.E .hor1 {
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.E .hor2 {
+	top: 22.5px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.E .hor3 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.E .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+
+
+.F {
+	width: 50px;
+	position: relative;
+}
+
+.lines-F {
+	background-image: url("F.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.F .vert {
+	top: 25px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.F .hor1 {
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.F .hor2 {
+	top: 22.5px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.F .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+
+
+
+.G {
+	width: 50px;
+	position: relative;
+}
+
+.lines-G {
+	background-image: url("C-G.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.G .vert {
+	top: 25px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.G .hor1 {
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.G .hor2 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.G .hor3 {
+	top: 22.5px;
+	left: 22.5px;
+	width: 2.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.G .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.G .tr {
+	left: 25px;
+	top: 22.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+
+
+
+.H {
+	width: 50px;
+	position: relative;
+}
+
+.lines-H {
+	background-image: url("H.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.H .vert1 {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.H .vert2 {
+	left: 22.5px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.H .hor1 {
+	left: 2.5px;
+	top: 22.5px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.H .hor2 {
+	top: 45px;
+	left: 47.5px;
+	width: 2.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.H .bl {
+	left: 22.5px;
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+
+
+
+.I {
+	width: 50px;
+	position: relative;
+}
+
+.lines-I {
+	background-image: url("I.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.I .vert {
+	left: 22.5px;
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.I .hor1 {
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.I .hor2 {
+	top: 45px;
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.I .tr {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.I .bl {
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+
+
+.J {
+	width: 50px;
+	position: relative;
+}
+
+.lines-J {
+	background-image: url("J-U.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.J .vert {
+	left: 45px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.J .bl {
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.J .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.K {
+	width: 50px;
+	position: relative;
+}
+
+.lines-K {
+	background-image: url("K.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.K .vert {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.K .hor {
+	top: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.K .tr {
+	left: 25px;
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.K .br {
+	left: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.L {
+	width: 50px;
+	position: relative;
+}
+
+.lines-L {
+	background-image: url("L.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+
+.L .vert {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.L .hor {
+	top: 45px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.L .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.M {
+	width: 50px;
+	position: relative;
+}
+
+.lines-M {
+	background-image: url("M.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.M .vert1 {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.M .vert2 {
+	left: 22.5px;
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.M .vert3 {
+	top: 25px;
+	left: 45px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.M .tr1 {
+	left: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.M .tr2 {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+
+
+.N {
+	width: 50px;
+	position: relative;
+}
+
+.lines-N {
+	background-image: url("N.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.N .vert1 {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.N .vert2 {
+	left: 45px;
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.N .tr {
+	left: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.N .bl {
+	left: 22.5px;
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+
+
+.O {
+	width: 50px;
+	position: relative;
+}
+
+.lines-O {
+	background-image: url("O-Q.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.O .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.O .tr {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.O .bl {
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.O .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.P {
+	width: 50px;
+	position: relative;
+}
+
+.lines-P {
+	background-image: url("P-R.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.P .vert {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.P .hor1 {
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.P .hor2 {
+	top: 22.5px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.P .tr {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+
+
+.Q {
+	width: 50px;
+	position: relative;
+}
+
+.lines-Q {
+	background-image: url("O-Q.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.Q .hor {
+	top: 45px;
+	left: 47.5px;
+	width: 2.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.Q .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.Q .tr {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.Q .bl1 {
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.Q .bl2 {
+	top: 25px;
+	left: 22.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.Q .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.R {
+	width: 50px;
+	position: relative;
+}
+
+.lines-R {
+	background-image: url("P-R.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.R .vert {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.R .hor1 {
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.R .hor2 {
+	top: 22.5px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.R .hor3 {
+	top: 45px;
+	left: 47.5px;
+	width: 2.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.R .tr {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.R .bl {
+	top: 25px;
+	left: 22.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+
+
+.S {
+	width: 50px;
+	position: relative;
+}
+
+.lines-S {
+	background-image: url("S.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.S .hor1 {
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.S .hor2 {
+	top: 22.5px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.S .hor3 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.S .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.S .tr {
+	top: 22.5px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+
+
+.T {
+	width: 50px;
+	position: relative;
+}
+
+.lines-T {
+	background-image: url("I-T-7.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.T .vert {
+	left: 22.5px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.T .hor1 {
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.T .hor2 {
+	top: 45px;
+	left: 47.5px;
+	width: 2.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.T .bl {
+	left: 22.5px;
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+
+
+.U {
+	width: 50px;
+	position: relative;
+}
+
+.lines-U {
+	background-image: url("U.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.U .vert1 {
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.U .vert2 {
+	left: 45px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.U .bl {
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.U .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.V {
+	width: 50px;
+	position: relative;
+}
+
+.lines-V {
+	background-image: url("V.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.V .vert1 {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.V .vert2 {
+	left: 45px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.V .hor {
+	top: 45px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.V .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.W {
+	width: 50px;
+	position: relative;
+}
+
+.lines-W {
+	background-image: url("W.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.W .vert1 {
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.W .vert2 {
+	left: 22.5px;
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.W .vert3 {
+	left: 45px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.W .br1 {
+	top: 25px;
+	left: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+.W .br2 {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.X {
+	width: 50px;
+	position: relative;
+}
+
+.lines-X {
+	background-image: url("X.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.X .vert1 {
+	width: 5px;
+	height: 2.5px;
+	background: black;
+	position: absolute;
+}
+
+.X .vert2 {
+	left: 45px;
+	width: 5px;
+	height: 2.5px;
+	background: black;
+	position: absolute;
+}
+
+.X .vert3 {
+	top: 47.5px;
+	width: 5px;
+	height: 2.5px;
+	background: black;
+	position: absolute;
+}
+
+.X .vert4 {
+	top: 47.5px;
+	left: 45px;
+	width: 5px;
+	height: 2.5px;
+	background: black;
+	position: absolute;
+}
+
+.X .tl {
+	top: 22.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.X .tr {
+	top: 22.5px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.X .bl {
+	top: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.X .br {
+	top: 2.5px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.Y {
+	width: 50px;
+	position: relative;
+}
+
+.lines-Y {
+	background-image: url("Y.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.Y .vert1 {
+	left: 45px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.Y .vert2 {
+	width: 5px;
+	height: 2.5px;
+	background: black;
+	position: absolute;
+}
+
+.Y .hor1 {
+	top: 22.5px;
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.Y .hor2 {
+	top: 45px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.Y .bl {
+	top: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.Y .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.Z {
+	width: 50px;
+	position: relative;
+}
+
+.lines-Z {
+	background-image: url("Z.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.Z .hor1 {
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.Z .hor2 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.Z .tl {
+	top: 22.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.Z .br {
+	top: 2.5px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.one {
+	width: 50px;
+	position: relative;
+}
+
+.lines-one {
+	background-image: url("1.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.one .vert {
+	left: 22.5px;
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.one .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+
+
+.two {
+	width: 50px;
+	position: relative;
+}
+
+.lines-two {
+	background-image: url("2.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.two .hor1 {
+	top: 22.5px;
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.two .hor2 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.two .tl1 {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.two .tl2 {
+	top: 22.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.two .tr {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+
+
+.three {
+	width: 50px;
+	position: relative;
+}
+
+.lines-three {
+	background-image: url("3.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.three .hor1 {
+	top: 22.5px;
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.three .hor2 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.three .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.three .tr1 {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.three .tr2 {
+	top: 22.5px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+
+
+.four {
+	width: 50px;
+	position: relative;
+}
+
+.lines-four {
+	background-image: url("4.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.four .vert1 {
+	left: 45px;
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.four .vert2 {
+	width: 5px;
+	height: 2.5px;
+	background: black;
+	position: absolute;
+}
+
+.four .hor {
+	top: 22.5px;
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.four .bl {
+	top: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+
+
+.five {
+	width: 50px;
+	position: relative;
+}
+
+.lines-five {
+	background-image: url("5.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.five .hor1 {
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.five .hor2 {
+	top: 45px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.five .hor3 {
+	top: 22.5px;
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.five .bl {
+	top: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.five .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.six {
+	width: 50px;
+	position: relative;
+}
+
+.lines-six {
+	background-image: url("6.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.six .hor1 {
+	left: 2.5px;
+	top: 22.5px;
+	width: 47.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.six .hor2 {
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.six .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.six .bl {
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.six .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.seven {
+	width: 50px;
+	position: relative;
+}
+
+.lines-seven {
+	background-image: url("7.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.seven .vert {
+	left: 45px;
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.seven .hor {
+	left: 25px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.seven .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+
+
+.eight {
+	width: 50px;
+	position: relative;
+}
+
+.lines-eight {
+	background-image: url("8.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.eight .hor1 {
+	top: 22.5px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.eight .hor2 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.eight .tl1 {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.eight .tl2 {
+	top: 22.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.eight .tr1 {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.eight .tr2 {
+	top: 22.5px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+
+
+
+
+.nine {
+	width: 50px;
+	position: relative;
+}
+
+.lines-nine {
+	background-image: url("9.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.nine .hor1 {
+	top: 22.5px;
+	width: 47.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.nine .hor2 {
+	top: 45px;
+	width: 25px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.nine .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.nine .tr {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.nine .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.zero {
+	width: 50px;
+	position: relative;
+}
+
+.lines-zero {
+	background-image: url("zero.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.zero .hor {
+	left: 2.5px;
+	top: 22.5px;
+	width: 45px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+.zero .tl {
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.zero .tr {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.zero .bl {
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+.zero .br {
+	top: 25px;
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.exclamation {
+	width: 50px;
+	position: relative;
+}
+
+.lines-exclamation {
+	background-image: url("exclamation.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.exclamation .vert {
+	left: 22.5px;
+	width: 5px;
+	height: 25px;
+	background: black;
+	position: absolute;
+}
+
+.exclamation .circ {
+	top: 37.5px;
+	left: 18.75px;
+	width: 2.5px;
+    height: 2.5px;
+    border-radius: 6.25px;
+    border: 5px solid black;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+
+.question {
+	width: 50px;
+	position: relative;
+}
+
+.lines-question {
+	background-image: url("question.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.question .vert {
+	top: 12.5px;
+	left: 22.5px;
+	width: 5px;
+	height: 12.5px;
+	background: black;
+	position: absolute;
+}
+
+.question .hor {
+	top: 12.5px;
+	left: 22.5px;
+	width: 15px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.question .top {
+	left: 12.5px;
+	width: 15px;
+    height: 7.5px;
+    border-top-left-radius: 12.5px;
+    border-top-right-radius: 12.5px;
+    border: 5px solid black;
+    border-bottom: 0;
+    position: absolute;
+}
+
+.question .circ {
+	left: 18.75px;
+	top: 37.5px;
+	width: 2.5px;
+    height: 2.5px;
+    border-radius: 6.25px;
+    border: 5px solid black;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+
+.period {
+	width: 50px;
+	position: relative;
+}
+
+.lines-period{
+	background-image: url("period.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.period .circ {
+	left: 18.75px;
+	top: 37.5px;
+	width: 2.5px;
+    height: 2.5px;
+    border-radius: 6.25px;
+    border: 5px solid black;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+
+.comma {
+	width: 50px;
+	position: relative;
+}
+
+.lines-comma{
+	background-image: url("comma.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.comma .br {
+	top: 37.5px;
+	left: 5px;
+	width: 7.5px;
+    height: 7.5px;
+    border-bottom-right-radius: 12.5px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+
+
+.colon {
+	width: 50px;
+	position: relative;
+}
+
+.lines-colon{
+	background-image: url("colon.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.colon .circ1 {
+	left: 18.75px;
+	width: 2.5px;
+    height: 2.5px;
+    border-radius: 6.25px;
+    border: 5px solid black;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+.colon .circ2 {
+	left: 18.75px;
+	top: 37.5px;
+	width: 2.5px;
+    height: 2.5px;
+    border-radius: 6.25px;
+    border: 5px solid black;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+.semicolon {
+	width: 50px;
+	position: relative;
+}
+
+.lines-semicolon{
+	background-image: url("comma.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.semicolon .circ {
+	left: 18.75px;
+	width: 2.5px;
+    height: 2.5px;
+    border-radius: 6.25px;
+    border: 5px solid black;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+.semicolon .br {
+	top: 37.5px;
+	left: 15px;
+	width: 7.5px;
+    height: 7.5px;
+    border-bottom-right-radius: 12.5px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+
+
+.singlequotel {
+	width: 50px;
+	position: relative;
+}
+
+.lines-singlequotel{
+	background-image: url("singlequotel.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.singlequotel .tl {
+	left: 22.5px;
+	width: 7.5px;
+    height: 7.5px;
+    border-top-left-radius: 12.5px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+
+
+.singlequoter {
+	width: 50px;
+	position: relative;
+}
+
+.lines-singlequoter{
+	background-image: url("singlequoter.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.singlequoter .br {
+	top: 5px;
+	left: 15px;
+	width: 7.5px;
+    height: 7.5px;
+    border-bottom-right-radius: 12.5px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+.apostrophe {
+	width: 50px;
+	position: relative;
+}
+
+.lines-apostrophe{
+	background-image: url("apostrophe.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.apostrophe .br {
+	top: 5px;
+	left: 15px;
+	width: 7.5px;
+    height: 7.5px;
+    border-bottom-right-radius: 12.5px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+
+.doublequotel {
+	width: 50px;
+	position: relative;
+}
+
+.lines-doublequotel{
+	background-image: url("singlequotel.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.doublequotel .tl1 {
+	left: 10px;
+	width: 7.5px;
+    height: 7.5px;
+    border-top-left-radius: 12.5px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+.doublequotel .tl2 {
+	left: 32.5px;
+	width: 7.5px;
+    height: 7.5px;
+    border-top-left-radius: 12.5px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+
+
+.doublequoter {
+	width: 50px;
+	position: relative;
+}
+
+.lines-doublequoter{
+	background-image: url("singlequoter.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.doublequoter .br1 {
+	top: 5px;
+	left: 15px;
+	width: 7.5px;
+    height: 7.5px;
+    border-bottom-right-radius: 12.5px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+.doublequoter .br2 {
+	top: 5px;
+	left: 37.5px;
+	width: 7.5px;
+    height: 7.5px;
+    border-bottom-right-radius: 12.5px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+
+
+.dash {
+	width: 50px;
+	position: relative;
+}
+
+.lines-dash{
+	background-image: url("dash.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.dash .hor {
+	top: 22.5px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+
+
+.parenthesisl {
+	width: 50px;
+	position: relative;
+}
+
+.lines-parenthesisl{
+	background-image: url("parenthesisl.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.parenthesisl .tl {
+	left: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.parenthesisl .bl {
+	left: 25px;
+	top: 25px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(-90deg);
+}
+
+
+
+.parenthesisr {
+	width: 50px;
+	position: relative;
+}
+
+.lines-parenthesisr{
+	background-image: url("parenthesisr.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.parenthesisr .tr {
+	left: 0px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.parenthesisr .br {
+	top: 25px;
+	left: 0px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+
+.plus {
+	width: 50px;
+	position: relative;
+}
+
+.lines-plus{
+	background-image: url("plus.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.plus .vert {
+	left: 22.5px;
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.plus .hor {
+	top: 22.5px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+
+
+.equal {
+	width: 50px;
+	position: relative;
+}
+
+.lines-equal{
+	background-image: url("equal.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.equal .hor1 {
+	top: 22.5px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.equal .hor2 {
+	top: 45px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+
+
+.slash {
+	width: 50px;
+	position: relative;
+}
+
+.lines-slash{
+	background-image: url("slash.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.slash .hor1 {
+	top: 45px;
+	width: 2.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.slash .hor2 {
+	left: 47.5px;
+	width: 2.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.slash .tl {
+	left: 22.5px;
+	width: 20px;
+    height: 20px;
+    border-top-left-radius: 25px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+}
+
+.slash .br {
+	top: 25px;
+	left: 2.5px;
+	width: 20px;
+    height: 20px;
+    border-bottom-right-radius: 25px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+}
+
+
+
+.dollar {
+	width: 50px;
+	position: relative;
+}
+
+.lines-dollar{
+	background-image: url("dollar.png");
+	background-size: 100%;
+	width: 50px;
+	height: 50px;
+}
+
+.dollar .vert {
+	left: 22.5px;
+	width: 5px;
+	height: 50px;
+	background: black;
+	position: absolute;
+}
+
+.dollar .hor1 {
+	top: 22.5px;
+	width: 50px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.dollar .hor2 {
+	top: 10px;
+	left: 12.5px;
+	width: 37.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.dollar .hor3 {
+	top: 35px;
+	left: 0px;
+	width: 37.5px;
+	height: 5px;
+	background: black;
+	position: absolute;
+}
+
+.dollar .br {
+	top: 27.5px;
+	left: 37.5px;
+	width: 7.5px;
+    height: 7.5px;
+    border-bottom-right-radius: 12.5px;
+    border: 5px solid black;
+    border-top: 0;
+    border-left: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+.dollar .tl {
+	top: 10px;
+	left: 0px;
+	width: 7.5px;
+    height: 7.5px;
+    border-top-left-radius: 12.5px;
+    border: 5px solid black;
+    border-bottom: 0;
+    border-right: 0;
+    position: absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    position: absolute;
+}

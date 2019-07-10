@@ -1,0 +1,845 @@
+<html>
+<head>
+<link rel="stylesheet" href="css/typeface.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/html2canvas.js"></script>
+
+<title>U N R E A D I N G L A N G U A G E</title>
+</head>
+
+<body>
+<div id="headercontainer">
+	<div class="headertitle">UNREADING LANGUAGE</div>
+</div>
+<div id="tfcontainer" class="tfcontainer">
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <textarea id="userText">Enter text here...</textarea>
+    <button type="button" onclick="getInput()">Convert</button>
+  </div>
+</div>
+
+<div id="lettercontainer">
+	<div class="letters" id="translate"></div>
+</div>
+    
+<!-- Use the letters (visible) -->
+
+<!-- Define the letters (invisible) -->
+<div class="letter-definition" data-character="&#x23ce;">
+    <div class="enter"></div>
+</div>
+
+<div class="letter-definition" data-character=" ">
+    <div class="space"></div>
+</div>
+
+<div class="letter-definition" data-character="A">
+<div class="hvr-pop">
+    <div class="A">
+        <div class="lines-A">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tr"></div>
+            <div class="bl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="B">
+<div class="hvr-pop">
+    <div class="B">
+        <div class="lines-B">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tr1"></div>
+            <div class="tr2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="C">
+<div class="hvr-pop">
+    <div class="C">
+        <div class="lines-C">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<div class="letter-definition" data-character="D">
+<div class="hvr-pop">
+    <div class="D">
+        <div class="lines-D">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tr"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="E">
+<div class="hvr-pop">
+    <div class="E">
+        <div class="lines-E">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="hor3"></div>
+            <div class="tl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="F">
+<div class="hvr-pop">
+    <div class="F">
+        <div class="lines-F">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="G">
+<div class="hvr-pop">
+    <div class="G">
+        <div class="lines-G">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="hor3"></div>
+            <div class="tl"></div>
+            <div class="tr"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="H">
+<div class="hvr-pop">
+    <div class="H">
+        <div class="lines-H">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="bl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="I">
+<div class="hvr-pop">
+    <div class="I">
+        <div class="lines-I">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tr"></div>
+            <div class="bl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="J">
+<div class="hvr-pop">
+    <div class="J">
+        <div class="lines-J">
+            <div class="vert"></div>
+            <div class="bl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="K">
+<div class="hvr-pop">
+    <div class="K">
+        <div class="lines-K">
+            <div class="vert"></div>
+            <div class="hor"></div>
+            <div class="tr"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="L">
+<div class="hvr-pop">
+    <div class="L">
+        <div class="lines-L">
+            <div class="vert"></div>
+            <div class="hor"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="M">
+<div class="hvr-pop">
+    <div class="M">
+        <div class="lines-M">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="vert3"></div>
+            <div class="tr1"></div>
+            <div class="tr2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="N">
+<div class="hvr-pop">
+    <div class="N">
+        <div class="lines-N">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="tr"></div>
+            <div class="bl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="O">
+<div class="hvr-pop">
+    <div class="O">
+        <div class="lines-O">
+            <div class="tl"></div>
+            <div class="tr"></div>
+            <div class="bl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="P">
+<div class="hvr-pop">
+    <div class="P">
+        <div class="lines-P">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tr"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="Q">
+<div class="hvr-pop">
+    <div class="Q">
+        <div class="lines-Q">
+            <div class="hor"></div>
+            <div class="tl"></div>
+            <div class="tr"></div>
+            <div class="bl1"></div>
+            <div class="bl2"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="R">
+<div class="hvr-pop">
+    <div class="R">
+        <div class="lines-R">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="hor3"></div>
+            <div class="tr"></div>
+            <div class="bl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="S">
+<div class="hvr-pop">
+    <div class="S">
+        <div class="lines-S">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="hor3"></div>
+            <div class="tl"></div>
+            <div class="tr"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="T">
+<div class="hvr-pop">
+    <div class="T">
+        <div class="lines-T">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="bl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="U">
+<div class="hvr-pop">
+    <div class="U">
+        <div class="lines-U">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="bl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="V">
+<div class="hvr-pop">
+    <div class="V">
+        <div class="lines-V">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="hor"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="W">
+<div class="hvr-pop">
+    <div class="W">
+        <div class="lines-W">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="vert3"></div>
+            <div class="br1"></div>
+            <div class="br2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="X">
+<div class="hvr-pop">
+    <div class="X">
+        <div class="lines-X">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="vert3"></div>
+            <div class="vert4"></div>
+            <div class="tl"></div>
+            <div class="tr"></div>
+            <div class="bl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="Y">
+<div class="hvr-pop">
+    <div class="Y">
+        <div class="lines-Y">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="bl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="Z">
+<div class="hvr-pop">
+    <div class="Z">
+        <div class="lines-Z">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="1">
+<div class="hvr-pop">
+    <div class="one">
+        <div class="lines-one">
+            <div class="vert"></div>
+            <div class="tl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="2">
+<div class="hvr-pop">
+    <div class="two">
+        <div class="lines-two">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tl1"></div>
+            <div class="tl2"></div>
+            <div class="tr"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="3">
+<div class="hvr-pop">
+    <div class="three">
+        <div class="lines-three">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tl"></div>
+            <div class="tr1"></div>
+            <div class="tr2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="4">
+<div class="hvr-pop">
+    <div class="four">
+        <div class="lines-four">
+            <div class="vert1"></div>
+            <div class="vert2"></div>
+            <div class="hor"></div>
+            <div class="bl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="5">
+<div class="hvr-pop">
+    <div class="five">
+        <div class="lines-five">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="hor3"></div>
+            <div class="bl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="6">
+<div class="hvr-pop">
+    <div class="six">
+        <div class="lines-six">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tl"></div>
+            <div class="bl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="7">
+<div class="hvr-pop">
+    <div class="seven">
+        <div class="lines-seven">
+            <div class="vert"></div>
+            <div class="hor"></div>
+            <div class="tl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="8">
+<div class="hvr-pop">
+    <div class="eight">
+        <div class="lines-eight">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tl1"></div>
+            <div class="tl2"></div>
+            <div class="tr1"></div>
+            <div class="tr2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="9">
+<div class="hvr-pop">
+    <div class="nine">
+        <div class="lines-nine">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tl"></div>
+            <div class="tr"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="0">
+<div class="hvr-pop">
+    <div class="zero">
+        <div class="lines-zero">
+            <div class="hor"></div>
+            <div class="tl"></div>
+            <div class="tr"></div>
+            <div class="bl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<div class="letter-definition" data-character="!">
+<div class="hvr-pop">
+    <div class="exclamation">
+        <div class="lines-zero">
+            <div class="vert"></div>
+            <div class="circ"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="?">
+<div class="hvr-pop">
+    <div class="question">
+        <div class="lines-question">
+            <div class="vert"></div>
+            <div class="hor"></div>
+            <div class="top"></div>
+            <div class="circ"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character=".">
+<div class="hvr-pop">
+    <div class="period">
+        <div class="lines-period">
+            <div class="circ"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character=",">
+<div class="hvr-pop">
+    <div class="comma">
+        <div class="lines-comma">
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character=":">
+<div class="hvr-pop">
+    <div class="colon">
+        <div class="lines-colon">
+            <div class="circ1"></div>
+            <div class="circ2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character=";">
+<div class="hvr-pop">
+    <div class="semicolon">
+        <div class="lines-semicolon">
+            <div class="circ"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="&lsquo;">
+<div class="hvr-pop">
+    <div class="singlequotel">
+        <div class="lines-singlequotel">
+            <div class="tl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="&rsquo;">
+<div class="hvr-pop">
+    <div class="singlequoter">
+        <div class="lines-singlequoter">
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="&apos;">
+<div class="hvr-pop">
+    <div class="apostrophe">
+        <div class="apostrophe">
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="&ldquo;">
+<div class="hvr-pop">
+    <div class="doublequotel">
+        <div class="lines-doublequotel">
+            <div class="tl1"></div>
+            <div class="tl2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="&rdquo;">
+<div class="hvr-pop">
+    <div class="doublequoter">
+        <div class="lines-doublequoter">
+            <div class="br1"></div>
+            <div class="br2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="-">
+<div class="hvr-pop">
+    <div class="dash">
+        <div class="lines-dash">
+            <div class="hor"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="&mdash;">
+<div class="hvr-pop">
+    <div class="dash">
+        <div class="lines-dash">
+            <div class="hor"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="(">
+<div class="hvr-pop">
+    <div class="parenthesisl">
+        <div class="lines-parenthesisl">
+            <div class="tl"></div>
+            <div class="bl"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character=")">
+<div class="hvr-pop">
+    <div class="parenthesisr">
+        <div class="lines-parenthesisr">
+            <div class="tr"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="+">
+<div class="hvr-pop">
+    <div class="plus">
+        <div class="lines-plus">
+            <div class="vert"></div>
+            <div class="hor"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="=">
+<div class="hvr-pop">
+    <div class="equal">
+        <div class="lines-equal">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="/">
+<div class="hvr-pop">
+    <div class="slash">
+        <div class="lines-slash">
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="tl"></div>
+            <div class="br"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="letter-definition" data-character="$">
+<div class="hvr-pop">
+    <div class="dollar">
+        <div class="lines-dollar">
+            <div class="vert"></div>
+            <div class="hor1"></div>
+            <div class="hor2"></div>
+            <div class="hor3"></div>
+            <div class="tl"></div>
+            <div class="br"></div>
+            <div class="tl"></div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="ctrlcontainer">
+    <div class="ctrltxt">READABILITY</div>
+    <label class="switch">
+        <input type="checkbox" id="Checkbox1">
+        <div id="slider" onclick="Readability()">OFF&nbsp;&nbsp;&nbsp;ON</div>
+    </label>
+    <br>
+    <div class="ctrltxt">COLOR</div>
+    <label class="whitecheck">
+        <input type="checkbox" id="Cb-color-white">
+    </label>
+    <label class="silvercheck">
+        <input type="checkbox" id="Cb-color-silver">
+    </label>
+    <label class="graycheck">
+        <input type="checkbox" id="Cb-color-gray">
+    </label>
+    <label class="blackcheck">
+        <input type="checkbox" id="Cb-color-black">
+    </label>
+    <label class="redcheck">
+        <input type="checkbox" id="Cb-color-red">
+    </label>
+    <label class="yellowcheck">
+        <input type="checkbox" id="Cb-color-yellow">
+    </label>
+    <label class="limecheck">
+        <input type="checkbox" id="Cb-color-lime">
+    </label>
+    <label class="aquacheck">
+        <input type="checkbox" id="Cb-color-aqua">
+    </label>
+    <label class="bluecheck">
+        <input type="checkbox" id="Cb-color-blue">
+    </label>
+    <label class="fuchsiacheck">
+        <input type="checkbox" id="Cb-color-fuchsia">
+    </label>
+    <div class="ctrltxt">BACKGROUND COLOR</div>
+    <label class="whitecheck">
+        <input type="checkbox" id="Cb-bgcolor-white">
+    </label>
+    <label class="silvercheck">
+        <input type="checkbox" id="Cb-bgcolor-silver">
+    </label>
+    <label class="graycheck">
+        <input type="checkbox" id="Cb-bgcolor-gray">
+    </label>
+    <label class="blackcheck">
+        <input type="checkbox" id="Cb-bgcolor-black">
+    </label>
+    <label class="redcheck">
+        <input type="checkbox" id="Cb-bgcolor-red">
+    </label>
+    <label class="yellowcheck">
+        <input type="checkbox" id="Cb-bgcolor-yellow">
+    </label>
+    <label class="limecheck">
+        <input type="checkbox" id="Cb-bgcolor-lime">
+    </label>
+    <label class="aquacheck">
+        <input type="checkbox" id="Cb-bgcolor-aqua">
+    </label>
+    <label class="bluecheck">
+        <input type="checkbox" id="Cb-bgcolor-blue">
+    </label>
+    <label class="fuchsiacheck">
+        <input type="checkbox" id="Cb-bgcolor-fuchsia">
+    </label>
+    <label class="save">
+        <input type="button" id="save">
+        SAVE IMAGE
+    </label>
+    <a href="home.html">
+	    <div class="reset">
+	        RESET
+	    </div>
+	</a>
+</div>
+
+<script type="text/javascript">
+	$( document ).ready( function() {
+		var width = $(window).width();
+		var widthfit = Math.floor((width-210)/45);
+		var textcontainerwidth = 45*widthfit+3;
+		var ctrlcontainerwidth = width-textcontainerwidth;
+	    $("#lettercontainer").css("width", textcontainerwidth);
+	    $(".ctrlcontainer").css("width", ctrlcontainerwidth);
+	})
+
+	$( window ).resize( function(){
+		var width = $(window).width();
+		var widthfit = Math.floor((width-210)/45);
+		var textcontainerwidth = 45*widthfit+3;
+		var ctrlcontainerwidth = width-textcontainerwidth;
+	    $("#lettercontainer").css("width", textcontainerwidth);
+	    $(".ctrlcontainer").css("width", ctrlcontainerwidth);
+	});
+</script>
+<script type="text/javascript" src="js/step1.js"></script>
+</body>
+</html>
