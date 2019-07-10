@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/puppet1_animation.css">
+	<link rel="stylesheet" type="text/css" href="css/puppet_animation.css">
+	<link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:,400,400i&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div id="puppet">
+		<div id="headrot">
+			<div id="head">
+				<img src="images/Puppet1/head.png" id="headclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+				<div id="headjoint"></div>
+			</div>
+		</div>
+		<div id="toptorsorot">
+			<div id="rightshoulderrot">
+				<div id="rightshoulder">
+					<img src="images/Puppet1/rightshoulder.png" id="rightshoulderclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+					<div id="rightshoulderjoint"></div>
+				</div>
+				<div id="rightarmrot">
+					<div id="rightarm">
+						<img src="images/Puppet1/rightarm.png" id="rightarmclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+						<div id="rightarmjoint"></div>
+					</div>
+					<div id="righthandrot">
+						<div id="righthand">
+							<img src="images/Puppet1/righthand.png" id="righthandclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+							<div id="righthandjoint"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="bottomtorsorot">
+				<div id="leftlegrot">
+					<div id="leftleg">
+						<img src="images/Puppet1/leftleg.png" id="leftlegclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+						<div id="leftlegjoint"></div>
+					</div>
+				</div>
+				<div id="bottomtorso">
+					<img src="images/Puppet1/bottomtorso.png" id="bottomtorsoclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+					<div id="bottomtorsojoint"></div>
+				</div>
+				<div id="rightlegrot">
+					<div id="rightleg">
+						<img src="images/Puppet1/rightleg.png" id="rightlegclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+						<div id="rightlegjoint"></div>
+					</div>
+				</div>
+			</div>
+			<div id="toptorso">
+				<img src="images/Puppet1/toptorso.png" id="toptorsoclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+				<div id="toptorsojoint"></div>
+			</div>
+			<div id="leftshoulderrot">
+				<div id="leftarmrot">
+					<div id="lefthandrot">
+						<div id="lefthand">
+							<img src="images/Puppet1/lefthand.png" id="lefthandclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+							<div id="lefthandjoint"></div>
+						</div>
+					</div>
+					<div id="leftarm">
+						<img src="images/Puppet1/leftarm.png" id="leftarmclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+						<div id="leftarmjoint"></div>
+					</div>	
+				</div>
+				<div id="leftshoulder">
+					<img src="images/Puppet1/leftshoulder.png" id="leftshoulderclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+					<div id="leftshoulderjoint"></div>
+				</div>
+			</div>					
+		</div>
+	</div>
+
+	<div id="lightscreen"></div>
+	<canvas id="keyframes" style="margin:0; padding:0; position:absolute; left:105px; bottom:45px; border: 0px solid #000;" id="imgCanvas" width="1750" height="29" onclick="draw(event)"></canvas>
+	<div id="playbutton" class="selectDisable"><span>PLAY animation</span></div>
+	<div id="freezebutton" class="selectDisable">record pose</div>
+	<div id="resetbutton" class="selectDisable" onClick="location.href=location.href">reset</div>
+	<a href="puppet1_home.html"><div id="prev"><</div></a>
+	
+	<div id="instructionsbg">
+		<div id="instructions">
+			Use arrow keys to move position.<br>
+			Click parts to rotate.<br>
+			Record two or more poses to make animation.
+		</div>
+	</div>
+	<audio id="audio" src="audio/puppetshow.mp3" ></audio>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/puppet1.js"></script>
+	<script type="text/javascript" src="js/okshadow.js"></script>
+	<script type="text/javascript" src="js/Tween.js"></script>
+	<script type="text/javascript" src="js/RequestAnimationFrame.js"></script>
+	<script type="text/javascript" src="js/puppet1_animation.js"></script>
+</body>
+</html>

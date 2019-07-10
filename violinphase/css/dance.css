@@ -277,6 +277,17 @@ a:hover {
   	z-index: 0;
 }
 
+#initialblock {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: transparent;
+	visibility: visible;
+	z-index: 10;
+}
+
 #initialplay{
 	position: fixed;
 	top: 50%;

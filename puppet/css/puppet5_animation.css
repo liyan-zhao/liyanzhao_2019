@@ -1,0 +1,40 @@
+#puppet{
+	position: absolute;
+	width: 660px;
+	height: 638px;
+	background-color: none;
+	transform: translate(calc(50vw - 250px), calc(50vh - 319px));
+}
+
+/*------------------------------------*/
+
+#head{
+	position: absolute;
+	margin-left: 0px;
+	margin-top: 0px;
+	width: 255px;
+	height: 392px;
+	/*background-color: yellow;*/
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+/*--------------------------------------------*/
+
+.puppetscale{
+	position: absolute;
+	transform: scale(.1);
+	transform-origin: 0% 0%;
+}
+
+/*--------------------------------------------*/
+
+#headjoint{
+	position: absolute;
+	margin-left: 231px;
+	margin-top: 337px;
+	width: 0px;
+	height: 0px;
+	background-color: magenta;
+}
+

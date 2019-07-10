@@ -1,0 +1,240 @@
+#puppet{
+	position: absolute;
+	width: 660px;
+	height: 638px;
+	background-color: none;
+	transform: translate(calc(50vw - 330px), calc(50vh - 319px));
+}
+
+/*------------------------------------*/
+
+#head{
+	position: absolute;
+	margin-left: 280px;
+	margin-top: 0px;
+	width: 155px;
+	height: 192px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#toptorso{
+	position: absolute;
+	margin-left: 310px;
+	margin-top: 155px;
+	width: 87px;
+	height: 232px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#bottomtorso{
+	position: absolute;
+	margin-left: 287px;
+	margin-top: 314px;
+	width: 140px;
+	height: 168px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#leftshoulder{
+	position: absolute;
+	margin-left: 153px;
+	margin-top: 174px;
+	width: 194.5px;
+	height: 57px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#rightshoulder{
+	position: absolute;
+	margin-left: 325px;
+	margin-top: 176px;
+	width: 189.5px;
+	height: 56px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#leftarm{
+	position: absolute;
+	margin-left: 44px;
+	margin-top: 142px;
+	width: 164px;
+	height: 123.5px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#rightarm{
+	position: absolute;
+	margin-left: 461px;
+	margin-top: 136px;
+	width: 162.5px;
+	height: 122.5px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#lefthand{
+	position: absolute;
+	margin-left: 0px;
+	margin-top: 225px;
+	width: 61px;
+	height: 31px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#righthand{
+	position: absolute;
+	margin-left: 603px;
+	margin-top: 222px;
+	width: 57px;
+	height: 31.5px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#leftleg{
+	position: absolute;
+	margin-left: 256px;
+	margin-top: 436px;
+	width: 124.5px;
+	height: 198px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+#rightleg{
+	position: absolute;
+	margin-left: 343px;
+	margin-top: 433px;
+	width: 124.5px;
+	height: 205px;
+	background-color: none;
+	/*visibility: hidden;*/
+	/*mix-blend-mode: overlay;*/
+}
+
+/*--------------------------------------------*/
+
+.puppetscale{
+	position: absolute;
+	transform: scale(.1);
+	transform-origin: 0% 0%;
+}
+
+/*--------------------------------------------*/
+
+#leftshoulderjoint{
+	position: absolute;
+	margin-left: 185px;
+	margin-top: 28px;
+	width: 0px;
+	height: 0px;
+	background-color: red;
+	visibility: visible;
+}
+
+#leftarmjoint{
+	position: absolute;
+	margin-left: 136px;
+	margin-top: 62.5px;
+	width: 0px;
+	height: 0px;
+	background-color: chartreuse;
+}
+
+#lefthandjoint{
+	position: absolute;
+	margin-left: 57px;
+	margin-top: 17.5px;
+	width: 0px;
+	height: 0px;
+	background-color: blue;
+}
+
+#rightshoulderjoint{
+	position: absolute;
+	margin-left: 13px;
+	margin-top: 26px;
+	width: 0px;
+	height: 0px;
+	background-color: magenta;
+}
+
+#rightarmjoint{
+	position: absolute;
+	margin-left: 28px;
+	margin-top: 66px;
+	width: 0px;
+	height: 0px;
+	background-color: chartreuse;
+}
+
+#righthandjoint{
+	position: absolute;
+	margin-left: 8px;
+	margin-top: 13.5px;
+	width: 0px;
+	height: 0px;
+	background-color: blue;
+}
+
+#headjoint{
+	position: absolute;
+	margin-left: 77px;
+	margin-top: 164px;
+	width: 0px;
+	height: 0px;
+	background-color: chartreuse;
+}
+
+#toptorsojoint{
+	position: absolute;
+	margin-left: 47px;
+	margin-top: 9px;
+	width: 0px;
+	height: 0px;
+	background-color: chartreuse;
+}
+
+#bottomtorsojoint{
+	position: absolute;
+	margin-left: 67px;
+	margin-top: 37px;
+	width: 0px;
+	height: 0px;
+	background-color: blue;
+}
+
+#leftlegjoint{
+	position: absolute;
+	margin-left: 64px;
+	margin-top: 22.5px;
+	width: 0px;
+	height: 0px;
+	background-color: magenta;
+}
+
+#rightlegjoint{
+	position: absolute;
+	margin-left: 55px;
+	margin-top: 24.5px;
+	width: 0px;
+	height: 0px;
+	background-color: magenta;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/puppet3_animation.css">
+	<link rel="stylesheet" type="text/css" href="css/puppet_animation.css">
+	<link href="https://fonts.googleapis.com/css?family=Gothic+A1:300,400,500,600" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:,400,400i&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div id="puppet">
+		<div id="leftarmrot">
+			<div id="lefthandrot">
+				<div id="lefthand">
+					<img src="images/Puppet3/tail.png" id="lefthandclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+					<div id="lefthandjoint"></div>
+				</div>
+			</div>
+			<div id="leftarm">
+				<img src="images/Puppet3/torso.png" id="leftarmclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+				<div id="leftarmjoint"></div>
+			</div>	
+		</div>	
+		<div id="leftshoulderrot">
+			<div id="leftshoulder">
+				<img src="images/Puppet3/head.png" id="leftshoulderclick" class="shadowmode selectDisable nonDraggableImage puppetscale">
+				<div id="leftshoulderjoint"></div>
+			</div>
+		</div>				
+	</div>
+
+	<div id="lightscreen"></div>
+	<canvas id="keyframes" style="margin:0; padding:0; position:absolute; left:105px; bottom:45px; border: 0px solid #000;" id="imgCanvas" width="1750" height="29" onclick="draw(event)"></canvas>
+	<div id="playbutton" class="selectDisable">PLAY animation</div>
+	<div id="freezebutton" class="selectDisable">record pose</div>
+	<div id="resetbutton" class="selectDisable" onClick="location.href=location.href">reset</div>
+	<a href="puppet3_home.html"><div id="prev"><</div></a>
+	<div id="instructionsbg">
+		<div id="instructions">
+			Use arrow keys to move position.<br>
+			Click parts to rotate.<br>
+			Record two or more poses to make animation.
+		</div>
+	</div>
+	<audio id="audio" src="audio/puppetshow.mp3" ></audio>
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/puppet3.js"></script>
+	<script type="text/javascript" src="js/okshadow.js"></script>
+	<script type="text/javascript" src="js/Tween.js"></script>
+	<script type="text/javascript" src="js/RequestAnimationFrame.js"></script>
+	<script type="text/javascript" src="js/puppet3_animation.js"></script>
+</body>
+</html>

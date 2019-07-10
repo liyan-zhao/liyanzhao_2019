@@ -1,0 +1,222 @@
+body{
+	margin: 0;
+	font-size: 30px;
+    /*font-family: 'Gothic A1', sans-serif;*/
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 600;
+    /*text-transform: uppercase;*/
+	/*overflow-x: hidden;
+	overflow-y: hidden;*/
+}
+
+.shadowtext{
+	position: absolute;
+	bottom: 30px;
+	font-size: 28px;
+	font-family: 'Gothic A1', sans-serif;
+	font-weight: 600;
+	/*font-family: 'SuperclarendonLight';*/
+	color: white;
+	filter: blur(0px);
+	text-align: center;
+    width: 80vw;
+    left: 50%;
+    margin-left: -40vw;
+    user-select: none;
+    text-transform: uppercase;
+	mix-blend-mode: multiply;
+}
+
+.shadowtext:hover{
+	color: yellow;
+	mix-blend-mode: normal;
+}
+
+#next {
+	position: absolute;
+    right: 35px;
+    bottom: 18px;
+    font-size: 60px;
+	font-family: 'Gothic A1', sans-serif;
+	font-weight: 500;
+	color: black;
+	user-select: none;
+}
+
+#prev {
+	position: absolute;
+    left: 35px;
+    bottom: 18px;
+    font-size: 60px;
+	font-family: 'Gothic A1', sans-serif;
+	font-weight: 500;
+	color: black;
+	user-select: none;
+	filter: blur(2px);
+}
+
+#next:hover, #prev:hover {
+  color: black;
+  cursor: pointer;
+  filter: blur(0px);
+}
+
+
+.selectDisable {
+    user-select: none;
+}
+
+.nonDraggableImage{
+    -webkit-user-drag: none;
+}
+
+.shadowmode{
+}
+
+/*#muslinscreen{
+	position: absolute;
+	mix-blend-mode: overlay;
+	height: 100vh;
+	width: 100vw;
+}*/
+
+#lightscreen{
+	position: fixed;
+	top: 0;
+	left: 0;
+	mix-blend-mode: multiply;
+	height: 100vh;
+	width: 100vw;
+	background: radial-gradient(#FEE5AC, black);
+	visibility: hidden;
+	animation: flicker 3s linear infinite;
+}
+
+@keyframes flicker {
+	0%, 10%, 25%, 63% {
+		opacity: 1;
+		/*background: radial-gradient(#FEE5AC, black);*/
+	}
+	20%, 50%, 75%, 90% {
+		opacity: 0.95;
+		/*background: radial-gradient(#feecac, black);*/
+	}
+}
+
+#playbutton{
+	position: absolute;
+	right: 330px;
+	bottom: 35px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+	mix-blend-mode: multiply;
+	visibility: hidden;
+	filter: blur(0px);
+	text-transform: uppercase;
+}
+
+#playbutton:hover{
+	cursor: pointer;
+	background-color: yellow;
+	/*color: white;*/
+	filter: blur(0px);
+}
+
+#playbutton:active{
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	filter: blur(0px);
+}
+
+#freezebutton{
+	position: absolute;
+	right: 40px;
+	bottom: 35px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	border: 2px solid black;
+	background-color: white;
+	color: black;
+	mix-blend-mode: multiply;
+	filter: blur(0px);
+	text-transform: uppercase;
+}
+
+#freezebutton:hover{
+	background-color: yellow;
+	/*color: white;*/
+	cursor: pointer;
+	filter: blur(0px);
+}
+
+#freezebutton:active{
+	background-color: black;
+	color: white;
+	cursor: pointer;
+	filter: blur(0px);
+}
+
+#resetbutton{
+	position: absolute;
+	right: 40px;
+	bottom: 35px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 3px;
+	border: 1px solid white;
+	background-color: none;
+	color: white;
+	mix-blend-mode: difference;
+	visibility: hidden;
+	filter: blur(0px);
+	text-transform: uppercase;
+}
+
+#resetbutton:hover{
+	/*background-color: yellow;*/
+	background-color: white;
+	border: 1px solid white;
+	color: black;
+	cursor: pointer;
+	filter: blur(0px);
+}
+
+#resetbutton:active{
+	background-color: #b2a17b;
+	border: 1px solid #b2a17b;
+	color: black;
+	cursor: pointer;
+	filter: blur(0px);
+}
+
+
+#instructions{
+	position: absolute;
+	left: calc(50vw - 320px);
+	top: calc(50vh - 60px);
+	/*mix-blend-mode: screen;*/
+	font-size: 30px;
+	color: white;
+	filter: blur(0px);
+	line-height: 1.5;
+	z-index: 100;
+}
+
+#instructionsbg{
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 100vh;
+	width: 100vw;
+	background: black;
+	opacity: 0.8;
+}

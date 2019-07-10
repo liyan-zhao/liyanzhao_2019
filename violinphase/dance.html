@@ -14,7 +14,9 @@
 
 <div id="dancetitle"><a href="about.html">< ABOUT</a></div>
 
-<div id="initialplay" onclick="hideinitial(this); play()"><img src= "images/play_w.svg"></div>
+<div id="initialblock" onclick="hideinitial(this); play()">
+	<div id="initialplay"><img src= "images/play_w.svg"></div>
+</div>
 
 <div id="audioplayer">
     <div id="pButton" onclick="frozen();" onmouseenter="seeicon(this)" onmouseleave="hideicon(this)"><img id="playbutton1" src= "images/pause_w.svg"></div>
@@ -60,6 +62,7 @@
 
 	function hideinitial(x) {
 	  x.style.visibility = "hidden";
+	  document.getElementById('initialplay').style.visibility = "hidden";
 	}
 
 	function seeicon(x) {
