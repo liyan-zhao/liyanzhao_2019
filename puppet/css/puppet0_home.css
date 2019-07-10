@@ -2,11 +2,6 @@ body{
     background-color: black;
 }
 
-@font-face {
-font-family: "SuperclarendonLight";
-src: url("SuperclarendonLight.ttf") format("truetype");
-}
-
 i {
     border: solid white;
     border-width: 0 5px 5px 0;
@@ -128,32 +123,6 @@ i {
 
 
 
-/*.menuicon {
-    display: inline-block;
-    cursor: pointer;
-    position: absolute;
-    right: 40px;
-    bottom: 30px;
-}
-
-#bar1, #bar2, #bar3 {
-    width: 35px;
-    height: 3px;
-    background-color: white;
-    margin: 8px 0;
-    transition: 0.4s;
-}
-
-.change #bar1 {
-    transform: rotate(-45deg) translate(-7px, 8px);
-}
-
-.change #bar2 {opacity: 0;}
-
-.change #bar3 {
-    transform: rotate(45deg) translate(-8px, -8px);
-}*/
-
 #about {
     height: 100%;
     width: 100vw;
@@ -171,10 +140,6 @@ i {
     animation-duration: 5s;*/
 }
 
-/*@keyframes fade {
-    from{filter: blur(1px); opacity: 1;}
-    to{filter: blur(50px); opacity: 0;}
-}*/
 
 #about a {
     padding: 8px 8px 8px 32px;
@@ -223,7 +188,6 @@ i {
 }
 
 #about #peabody {
-    font-size: 42px; 
     display: inline; 
     margin-left: -32px; 
     color: white; 
