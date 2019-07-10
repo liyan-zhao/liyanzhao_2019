@@ -134,8 +134,16 @@ a:visited {
   font-family: 'Suisse Intl Light', Helvetica, sans-serif;
   font-size: 25px;
   letter-spacing: .5px;
-  line-height: 35px;
+  line-height: 40px;
   /*background-color: red;*/
+}
+
+.description a {
+  color: white;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .italic {
