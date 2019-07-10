@@ -9,7 +9,7 @@ body{
 #lettercontainer{
 	position: absolute;
 	top: 0px;
-	left: 0px;
+	left: 5px;
 	/*background-color: red;*/
 	width: 1215px;
 	/*height: calc(50%);*/
@@ -20,7 +20,7 @@ body{
 .tfcontainer{
 	display: flex;
 	flex-direction: column;
-	width: calc(1215px);
+	width: 100vw;
 	min-height: 100vh;
 	/*border-right: 1px solid black;*/
 	background-color: white
@@ -55,7 +55,7 @@ body{
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
-    top: 0;
+    top: calc(2.5vw - 10px);
     width: 100%; /* Full width */
     height: 130%; /* Full height */
     overflow: auto; /* Enable scroll if needed */
