@@ -18,7 +18,7 @@
 	</div>
 	
 	<div id="lightscreen"></div>
-	<canvas id="keyframes" style="margin:0; padding:0; position:absolute; left:105px; bottom:45px; border: 0px solid #000;" id="imgCanvas" width="1750" height="29" onclick="draw(event)"></canvas>
+	<canvas id="keyframes" onclick="draw(event)"></canvas>
 	<div id="playbutton" class="selectDisable">PLAY animation</div>
 	<div id="freezebutton" class="selectDisable">record pose</div>
 	<div id="resetbutton" class="selectDisable" onClick="location.href=location.href">reset</div>
@@ -39,5 +39,10 @@
 	<script type="text/javascript" src="js/Tween.js"></script>
 	<script type="text/javascript" src="js/RequestAnimationFrame.js"></script>
 	<script type="text/javascript" src="js/puppet4_animation.js"></script>
+	<script type="text/javascript">
+		htmlCanvas = document.getElementById('keyframes')
+		htmlCanvas.width = window.innerWidth/100*84-350;
+        htmlCanvas.height = window.innerWidth/150+8;
+	</script>
 </body>
 </html>

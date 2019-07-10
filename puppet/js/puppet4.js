@@ -190,11 +190,11 @@ $('#freezebutton').click(function() {
 
     var canvas = document.getElementById("keyframes")
     var ctx=canvas.getContext("2d");
-    var kcoord = 2.5+(poses-1)*30;
+    var kcoord = 3+(poses-1)*window.innerWidth/70;
     ctx.beginPath();
     ctx.moveTo(kcoord, 0);
     ctx.lineTo(kcoord, 39);
-    ctx.lineWidth=5;
+    ctx.lineWidth=1+window.innerWidth/700;
     ctx.stroke();
 });
 

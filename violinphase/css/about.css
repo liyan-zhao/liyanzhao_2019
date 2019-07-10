@@ -28,11 +28,12 @@ body{
 		}
 
 		#quote{
+			width: 800px;
 			position: absolute;
 			font: 25px "courier", monospace;
 			line-height: 2;
 			color: white;
-			left: calc(10vw);
+			margin-left: calc(50vw - 400px);
 			margin-top: calc(50vh - 50px);	
 			-webkit-animation: flicker 3s infinite;
 		}
