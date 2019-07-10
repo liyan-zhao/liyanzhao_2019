@@ -147,7 +147,7 @@ button:hover {
 #headercontainer:hover {
     /*color: blue;*/
     line-height: 1em;
-    letter-spacing: calc(100vw/18 - 12px);
+    letter-spacing: calc(100vw/12.5 - 14px);
     transition: 2s;
 }
 
@@ -185,7 +185,7 @@ button:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  padding-left: 6px;
+  padding-left: 9px;
   padding-top: 8px;
   background-color: black;
   color: white;
