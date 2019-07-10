@@ -359,8 +359,16 @@ a:visited {
   line-height: 35px;
 }
 
+.sidenav .contact a:hover {
+  border-bottom: 2px solid black;
+}
+
 .sidenav .cv{
   position: absolute;
   bottom: 70px;
   right: calc(50% - 270px);
+}
+
+.sidenav .cv a:hover {
+  border-bottom: 2px solid black;
 }
