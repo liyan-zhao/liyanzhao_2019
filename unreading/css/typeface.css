@@ -9,7 +9,7 @@ body{
 #lettercontainer{
 	position: absolute;
 	top: 0px;
-	left: 5px;
+	left: 0px;
 	/*background-color: red;*/
 	width: 1215px;
 	/*height: calc(50%);*/
