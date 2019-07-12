@@ -79,18 +79,19 @@ a:visited {
   position: relative;
   margin: 0;
   padding: 0;
-  left: 0;
+  left: 50%;
   bottom: 0;
   min-width: 100%; 
   min-height: 100%;
   cursor: s-resize;
+  transform: translateX(-50%);
 }
 
 .title {
   position: absolute;
   top: 0;
   color: white;
-  width: 100%;
+  width: calc(100vw - 120px);
   margin-top: calc(50vh - 50px);
   text-align: center;
   font-family: 'Suisse Intl Regular', Helvetica, sans-serif;
@@ -99,12 +100,18 @@ a:visited {
   -webkit-text-stroke-color: black;
   user-select: none;
   cursor: s-resize;
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 .titlevid {
   position: relative;
   height: 100%;
   width: 100%;
+}
+
+.break {
+  word-break: break-word;
 }
 
 /*.panel {
@@ -172,7 +179,7 @@ a:visited {
   font-family: 'Superclarendon Light', serif;
   font-size: 0.8em;
   line-height: calc((100vh - 300px)/18);
-  z-index: 100;
+  z-index: 10;
   float: right;
   /*background-color: blue;*/
   text-align: right;
@@ -362,4 +369,98 @@ a:visited {
 
 .sidenav .cv a:hover {
   border-bottom: 2px solid black;
+}
+
+/*--------------------------------------------------*/
+
+@media only screen and (max-width: 800px) {
+  .sidenav {
+    height: 100%;
+    width: 100vw;;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-right: solid 1px black;
+    overflow-x: hidden;
+    transform: translateX(-100vw);
+    transition: 0.5s;
+    z-index: 11;
+  }
+
+  .sidenav .bio {
+    position: absolute;
+    top: 243px;
+    left: 32px;
+    width: calc(100% - 64px);
+    color: black;
+    font-family: 'Suisse Intl Regular', Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: .5px;
+    line-height: 29px;
+  }
+
+  .sidenav .semi {
+    font-family: 'Suisse Intl SemiBold', Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    line-height: 29px;
+  }
+
+  .sidenav a {
+    color: black;
+    font-family: 'Suisse Intl Regular Italic', Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: 1px;
+    line-height: 29px;
+  }
+
+  .sidenav .cv{
+    position: absolute;
+    bottom: 70px;
+    right: 35px;
+  }
+
+  .sidenav .contact{
+    position: absolute;
+    bottom: 70px;
+    left: 32px;
+    font-family: 'Suisse Intl Regular', Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: .5px;
+    line-height: 29px;
+  }
+
+  .description {
+    display: block;
+    margin-top: calc(-15% + 130px); 
+    margin-left: 15%;
+    margin-right: 15%;
+    font-family: 'Suisse Intl Light', Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: .5px;
+    line-height: 29px;
+  }
+
+}
+
+@media only screen and (max-width: 780px) {
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: white;
+    width: calc(100vw - 140px);
+    margin-top: calc(50vh - 50px);
+    text-align: center;
+    font-family: 'Suisse Intl Regular', Helvetica, sans-serif;
+    font-size: calc(25px + 8vw);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    user-select: none;
+    cursor: s-resize;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
 }
