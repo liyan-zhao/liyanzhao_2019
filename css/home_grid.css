@@ -380,22 +380,40 @@ a:visited {
     background-color: yellow;
   }
 
-  [class*='tile'] {
+  .tile {
     height: calc(9/16*(100vw - 280px) + 80px);
     width: calc(100vw - 280px);
+    float:left;
+    margin-right: 4%;
+    margin-bottom: 4%;
+    font-family: 'Suisse Intl Regular', Helvetica, sans-serif;
+    font-size: 25px;
+    letter-spacing: .5px;
+    line-height: 35px;
    }
 
-   [class*='sliderbox'] {
+  .sliderbox {
+    position: relative;
     height: calc(9/16*(100vw - 280px));
     width: calc(100vw - 280px);
-   }
+    overflow: hidden;
+  }
 }
 
 @media only screen and (max-width: 800px) {
 
-  [class*='sidenav'] {
-    width: 100vw;
+  .sidenav {
+    height: 100%;
+    width: 100vw;;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-right: solid 1px black;
+    overflow-x: hidden;
     transform: translateX(-100vw);
+    transition: 0.5s;
+    z-index: 11;
   }
 
   .sidenav .bio {
@@ -448,11 +466,15 @@ a:visited {
     background-color: cyan;
   }
 
-  [class*='title'] {
+  .title {
+    margin-top: -10px;
+    text-align: center;
     font-size: 19px;
-  }
+   }
 
-  [class*='count'] {
+  .count {
+    margin-top: 0;
+    text-align: right;
     font-size: 19px;
-  }
+   }
 }
