@@ -395,8 +395,52 @@ a:visited {
 
   [class*='sidenav'] {
     width: 100vw;
-    transform: translateX(100vw);
+    transform: translateX(-100vw);
   }
+
+  .sidenav .bio {
+    position: absolute;
+    top: 243px;
+    left: 32px;
+    width: calc(100% - 64px);
+    color: black;
+    font-family: 'Suisse Intl Regular', Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: .5px;
+    line-height: 29px;
+  }
+
+  .sidenav .semi {
+    font-family: 'Suisse Intl SemiBold', Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: 1.5px;
+    line-height: 29px;
+  }
+
+  .sidenav a {
+    color: black;
+    font-family: 'Suisse Intl Regular Italic', Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: 1px;
+    line-height: 29px;
+  }
+
+  .sidenav .cv{
+    position: absolute;
+    bottom: 70px;
+    right: 35px;
+  }
+
+  .sidenav .contact{
+    position: absolute;
+    bottom: 70px;
+    left: 32px;
+    font-family: 'Suisse Intl Regular', Helvetica, sans-serif;
+    font-size: 19px;
+    letter-spacing: .5px;
+    line-height: 29px;
+  }
+
 }
 
 @media only screen and (max-width: 563px) {
